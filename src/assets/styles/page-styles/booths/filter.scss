@@ -1,0 +1,44 @@
+.filter {
+    margin: 100px 0;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__select {
+        max-width: 250px;
+        width: 100%;
+        padding: 8px 16px;
+        color: $grayText;
+        font-family: $mr;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        border: 1px solid $grayText;
+        outline: none;
+        background: transparent;
+        border-radius: 4px;
+
+        &-container {
+            max-width: 600px;
+            width: 100%;
+            display: flex;
+            gap: 16px;
+        }
+    }
+
+    &__button {
+        // &-default {
+        //     padding: 8px 24px;
+        //     color: $white;
+        //     background: $buttonBlack;
+        //     font-family: Montserrat;
+        //     font-size: 16px;
+        //     font-style: normal;
+        //     font-weight: 600;
+        //     line-height: normal;
+        // }
+    }
+}

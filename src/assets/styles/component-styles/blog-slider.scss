@@ -1,0 +1,20 @@
+.blog {
+    &__slider {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        &-swiper {
+            max-width: 1050px;
+            width: 100%;
+        }
+
+        &-navigation {
+            display: flex;
+            position: absolute;
+            justify-content: space-between;
+            width: 100%;
+        }
+    }
+}

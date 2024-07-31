@@ -1,0 +1,14 @@
+.menu {
+    &__image {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+        &-img {
+            transition: 200ms;
+            cursor: pointer;
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+.slider {
+    &__bar {
+        &-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        &-button {
+            display: block;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 0;
+            background: $buttonGray;
+            color: $grayText;
+            text-align: center;
+            font-family: $mr;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            border-radius: 80px;
+
+            &-navigation {
+                border: 0;
+                background: linear-gradient(90deg, rgba(245, 245, 245, 0.00) 0%, #F5F5F5 21.8%) !important;
+                width: 198px;
+                height: 36px;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                z-index: 999;
+
+                img {
+                    cursor: pointer;
+                }
+
+                &:last-of-type {
+                    right: -90px;
+                }
+                &:first-of-type {
+                    display: none;
+                    left: -90px;
+                    transform: rotate(180deg);
+
+                    img {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+}

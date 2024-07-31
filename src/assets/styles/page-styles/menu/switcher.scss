@@ -1,0 +1,41 @@
+.switcher {
+    margin: 80px 0 40px 0;
+
+    &__button {
+        display: flex;
+        gap: 10px;
+        border: none;
+        padding: 8px 16px;
+        cursor: pointer;
+        border-radius: 80px;
+        background: transparent;
+        transition: 300ms;
+        font-family: $mr;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        align-items: center;
+
+        &-container {
+            display: flex;
+            background: $white;
+            border-radius: 80px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &-active {
+        background: $buttonBlack;
+        color: $white;
+
+        path {
+            fill: $white;
+        }
+    }
+}

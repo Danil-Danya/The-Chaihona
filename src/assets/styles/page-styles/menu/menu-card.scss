@@ -1,0 +1,15 @@
+.menu {
+    &__card {
+        &-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        &-reversed {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+    }
+}
