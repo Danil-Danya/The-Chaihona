@@ -7,7 +7,7 @@
                     <h1 class="header__title">{{ title }}</h1>
                     <p class="header__description">{{ description }}</p>
                     <div class="header__button-container">
-                        <router-link :to="button" v-for="button in buttons" :key="button">
+                        <router-link :to="button" class="header__button-link" v-for="button in buttons" :key="button">
                             <button class="header__button" :class="button.bordered ? 'header__bordered' : ''">{{ button.text }}</button>
                         </router-link>
                     </div>

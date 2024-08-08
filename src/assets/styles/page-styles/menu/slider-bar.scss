@@ -24,6 +24,10 @@
             line-height: normal;
             border-radius: 80px;
 
+            @include media ($xs) {
+                font-size: 14px;
+            }
+
             &-navigation {
                 border: 0;
                 background: linear-gradient(90deg, rgba(245, 245, 245, 0.00) 0%, #F5F5F5 21.8%) !important;

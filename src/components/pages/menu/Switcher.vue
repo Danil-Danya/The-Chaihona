@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="switcher__content">
                     <div class="switcher__button-container">
-                        <button class="switcher__button" ref="defaultButton" @click="switchMenuTypeFilter('default')">
+                        <button class="switcher__button" ref="defaultButton" @click="switchMenuTypeFilter('dish')">
                             <HotDishes />
                             <p class="switcher__text">Основное меню</p>
                         </button>
@@ -33,7 +33,7 @@ export default {
     methods: {
         setDefaultMenuTypeFilter () {
             if (!this.$route.query.menu_type) {
-                this.$router.push({ query: { ...this.$route.query, menu_type: 'default' } });
+                this.$router.push({ query: { ...this.$route.query, menu_type: 'dish' } });
             }
         },
 
@@ -50,7 +50,7 @@ export default {
             defaultButton.classList.remove('switcher-active');
             drinkButton.classList.remove('switcher-active');
 
-            if (filter === 'default') {
+            if (filter === 'dish') {
                 defaultButton.classList.add('switcher-active');
             }
 

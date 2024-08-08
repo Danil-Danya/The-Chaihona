@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "swiper": "^11.1.4",
+    "swiper": "^11.1.9",
     "vite-plugin-require": "^1.2.14",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"

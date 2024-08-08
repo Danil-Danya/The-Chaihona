@@ -17,6 +17,10 @@
         line-height: 150%;
         align-items: center;
 
+        @include media ($xs) {
+            font-size: 14px;
+        }
+
         &-container {
             display: flex;
             background: $white;

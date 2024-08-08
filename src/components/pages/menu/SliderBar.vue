@@ -10,7 +10,7 @@
                         <img src="@/assets/images/blog/slider/next.svg" alt="Arrow"  @click="slideNext">
                     </button>
                     <swiper class="slider__bar-swiper"
-                        :slides-per-view="6"
+                        :slides-per-view="slides"
                         :spaceBetween="10"
                         :loop="true"
                         :navigation="{
@@ -39,6 +39,7 @@ import 'swiper/css';
 
 export default {
     data: () => ({
+        slides: 6,
         sliderData: [
             'Первые блюда',
             'Национальные блюда',
@@ -64,6 +65,16 @@ export default {
         },
         slidePrev() {
             this.$refs.barSwiper.swiper.slidePrev();
+        },
+
+        changeSlides () {
+            const width =  window.innerWidth;
+
+            if (width < 960)
+                this.slides = 3;
+
+            if (width < 570)
+                this.slides = 1.8;
         }
     },
 
@@ -72,6 +83,10 @@ export default {
              modules: [Navigation, EffectCoverflow],
         };
     },
+
+    mounted () {
+        this.changeSlides()
+    }
 }
 
 </script>

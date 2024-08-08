@@ -9,7 +9,7 @@
             </button>
         </div>
         <swiper class="blog__slider-swiper"
-            :slides-per-view="3"
+            :slides-per-view="width > 960 ? 3 : 1"
             :spaceBetween="100"
             :navigation="{
                 prevEl: '.slider-prev',
@@ -36,6 +36,7 @@ import 'swiper/css';
 
 export default {
     data: () => ({
+        width: window.innerWidth,
         postDataSet: [
             {
                 img: require('@/assets/images/blog/post.png'),

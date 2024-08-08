@@ -16,11 +16,13 @@
 
 import Navbar from '@/components/layouts/blog-layout/Navbar.vue';
 import Footer from '@/components/layouts/Footer.vue';
+import MobileNavbar from '@/components/layouts/MobileNavbar.vue';
 
 export default {
     components: {
         Navbar,
-        Footer
+        Footer,
+        MobileNavbar
     },
 }
 

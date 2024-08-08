@@ -49,15 +49,17 @@ export default {
 
     methods: {
         changeMenuSize () {
+            const documentWidth = window.innerWidth;
+
             const menuItem = this.$refs.menuItem;
             const container = this.$refs.container;
 
-            console.log(213);
-
-            menuItem.forEach(item => {
-                item.style.width = container.clientWidth / menuItem.length + 'px';
-                item.style.height = container.clientWidth / menuItem.length + 'px';
-            });
+            if (documentWidth > 960) {
+                menuItem.forEach(item => {
+                    item.style.width = container.clientWidth / menuItem.length + 'px';
+                    item.style.height = container.clientWidth / menuItem.length + 'px';
+                });
+            }
         }
     },
 
