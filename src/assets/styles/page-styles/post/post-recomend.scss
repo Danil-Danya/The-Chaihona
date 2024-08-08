@@ -2,6 +2,11 @@
     &-recomend {
         max-width: 300px;
         margin-top: 150px;
+
+        @include media ($xs) {
+            max-width: 100%;
+            margin-top: 0;
+        }
     }
 
     &__recomend {
@@ -9,6 +14,15 @@
             display: flex;
             flex-direction: column;
             gap: 30px;
+        }
+
+        &-image {
+            @include media ($xs) {
+                width: 100%;
+                min-height: 200px;
+                object-fit: cover;
+                border-radius: 5px;
+            }
         }
 
         &-title {

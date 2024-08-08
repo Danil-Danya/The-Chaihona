@@ -39,6 +39,7 @@
 
 <script>
 import Button from "@/components/reused/Button.vue";
+
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
@@ -74,7 +75,6 @@ export default {
             require('@/assets/images/buths/buths.png'),
             require('@/assets/images/buths/buths.png'),
             require('@/assets/images/buths/buths.png'),
-            
         ]
     }),
 

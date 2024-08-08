@@ -38,12 +38,21 @@
                 justify-content: center;
                 z-index: 999;
 
+                @include media ($xs) {
+                    justify-content: flex-end;
+                    width: 50px;
+                }
+
                 img {
                     cursor: pointer;
                 }
 
                 &:last-of-type {
                     right: -90px;
+
+                    @include media ($xs) {
+                        right: 0;
+                    }
                 }
                 &:first-of-type {
                     display: none;

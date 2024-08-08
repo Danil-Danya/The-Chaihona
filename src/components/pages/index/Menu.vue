@@ -10,7 +10,7 @@
                 <div class="menu__set-item" v-for="item in setList" :key="item" ref="menuItem">
                     <img :src="item.img" alt="Menu" class="menu__set-item-img">
                     <div class="menu__set-item-backround"></div>
-                    <router-link to="" class="menu__set-item-link">
+                    <router-link :to="item.path" class="menu__set-item-link">
                         <p class="menu__set-item-text">{{ item.text }}</p>
                     </router-link>
                 </div>
@@ -25,23 +25,23 @@ export default {
     data: () => ({
         setList: [
             {
-                img: require('@/assets/images/menu/set.png'),
-                path: '',
+                img: require('@/assets/images/menu/set1.png'),
+                path: '/menu#one',
                 text: 'Первые блюда'
             },
             {
-                img: require('@/assets/images/menu/set.png'),
-                path: '',
+                img: require('@/assets/images/menu/set2.png'),
+                path: '/menu#two',
                 text: 'Вторые блюда'
             },
             {
-                img: require('@/assets/images/menu/set.png'),
-                path: '',
+                img: require('@/assets/images/menu/set3.png'),
+                path: '/menu#shaslyk',
                 text: 'Шашлыки'
             },
             {
-                img: require('@/assets/images/menu/set.png'),
-                path: '',
+                img: require('@/assets/images/menu/set4.png'),
+                path: '/menu#deserts',
                 text: 'Десерты'
             },
         ]

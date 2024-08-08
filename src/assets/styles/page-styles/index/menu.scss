@@ -1,5 +1,6 @@
 .menu {
     margin: 100px 0;
+    
     @include media ($xs) {
         margin-bottom: 50px;
     }

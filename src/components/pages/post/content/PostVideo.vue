@@ -6,7 +6,7 @@
         </div>
         <div class="post__others">
             <div class="post__others-item" v-for="item in test" :key="item">
-                <Video />
+                <Video class="post__video-icon"/>
                 <p class="post__others-text">{{ item }}</p>
             </div>
         </div>

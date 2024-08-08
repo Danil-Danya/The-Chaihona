@@ -32,8 +32,13 @@ export default {
 
     methods: {
         setDefaultMenuTypeFilter () {
-            if (!this.$route.query.menu_type) {
-                this.$router.push({ query: { ...this.$route.query, menu_type: 'dish' } });
+            const { query, hash } = this.$route;
+
+            if (!query.menu_type) {
+                this.$router.push({ 
+                    query: { ...query, menu_type: 'dish' },
+                    hash: hash
+                });
             }
         },
 

@@ -1,5 +1,10 @@
 <template>
     <section class="navbar-blog">
+        <transition name="navbar">
+            <div class="navbar__mobile-block" v-show="mobile">
+                <MobileNavbar :navList="navList" :contacts="contactList"  @toggleBar="toggleBar"/>
+            </div>
+        </transition>
         <div class="navbar-blog__content">
             <div class="container">
                 <div class="navbar-blog__content">
@@ -8,7 +13,7 @@
                             <img src="@/assets/images/navbar/logo-blog.svg" alt="Logo" class="navbar-blog__logo">
                         </router-link>
                     </div>
-                    <div class="navbar-blog__nav">
+                    <div class="navbar-blog__nav" v-if="documentWidth > 1300">
                         <nav class="nav">
                             <ul class="navbar-blog__nav-ul">
                                 <li v-for="link in navList" :key="link">
@@ -20,7 +25,12 @@
                         </nav>
                     </div>
                     <div class="navbar-blog__language"></div>
-                    <div class="navbar-blog__contact">
+                    <div class="navbar__burgermenu" v-if="documentWidth < 1300">
+                        <button class="navbar__burgermenu-button" @click="toggleBar">
+                            <span class="navbar__burgermenu-line-black" v-for="item in 3"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-blog__contact" v-if="documentWidth > 1300">
                         <ul>
                             <li v-for="link in contactList" :key="link">
                                 <a :href="link.path" class="navbar-blog__contact-link">
@@ -40,9 +50,12 @@
 
 import Location from '@/components/icons/navbar/Location.vue';
 import Phone from '@/components/icons/navbar/Phone.vue';
+import MobileNavbar from '../MobileNavbar.vue';
 
 export default {
     data: () => ({
+        documentWidth: window.innerWidth,
+        mobile: false,
         navList: [
             { path: '', text: 'Забронировать' },
             { path: '/menu', text: 'Меню' },
@@ -59,7 +72,18 @@ export default {
 
     components: {
         Location,
+        MobileNavbar,
         Phone
+    },
+
+    methods: {
+        toggleBar () {
+            this.mobile = !this.mobile;
+        }
+    },
+
+    mounted () {
+        window.addEventListener('resize', () => this.documentWidth = window.innerWidth);
     }
 }
 

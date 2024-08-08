@@ -12,6 +12,14 @@ const router = createRouter({
       }
     },
     {
+      path: '/:pathName(.*)*',
+      name: 'NotFound',
+      component: () => import('../views/NotFound.vue'),
+      meta: {
+        layout: 'blog'
+      }
+    },
+    {
       path: '/menu',
       name: 'menu',
       component: () => import('@/views/Menu.vue'),
@@ -54,4 +62,4 @@ const router = createRouter({
   ]
 })
 
-export default router
+export default router;

@@ -76,6 +76,7 @@
             background: $buttonBlack;
             position: absolute;
             right: 0;
+            height: 75px;
             
             @include media ($xs) {
                 height: 75px;
