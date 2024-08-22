@@ -1,33 +1,70 @@
 <template>
     <section class="post-info">
-        <h1 class="post__info-title">Роман Сайфулин об уходе из Makro, открытии The Choyxona ресторане на берегу моря за $1 млн и мечтах о бане</h1>
+        <h1 class="post__info-title">{{post.title}}</h1>
         <div class="post__statistic">
             <div class="post__date">
-                <p class="post__statistic-text">Июнь 15, 2024</p>
-                <p class="post__statistic-text">16:45</p>
+                <p class="post__statistic-text" v-if="post.createdAt">{{ post.createdAt.split('T')[0] }}</p>
+                <p class="post__statistic-text" v-if="post.createdAt">{{ post.createdAt.split('T')[1].split(':')[0] }} : {{ post.createdAt.split('T')[1].split(':')[1] }}</p>
             </div>
             <div class="post__views">
                 <View />
-                <p class="post__statistic-text">476</p>
+                <p class="post__statistic-text">{{post.views}}</p>
             </div>
         </div>
-        <div class="post__image">
-            <img src="@/assets/images/post/author.png" alt="Image" class="post__image-img">
+        <div class="post__image" v-if="post.image">
+            <img :src="link + post.image.path" alt="Image" class="post__image-img" @click="toggleZoom">
+            <transition name="fade">
+                <ZoomImagePopup :image="link + post.image.path" @toggleZoom="toggleZoom" v-if="zoom"/>
+            </transition>
         </div>
         <div class="post__paragraphs">
-            <p class="post__paragraphs-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p class="post__paragraphs-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="post__paragraphs-text" v-for="desc in post.descriptions" :key="desc">{{ desc.description }}</p>
         </div>
     </section>
 </template>
 
 <script>
 
+import ZoomImagePopup from '@/components/reused/popup/ZoomImagePopup.vue';
+
 import View from '@/components/icons/post/View.vue';
+import axios from '@/api/axios';
 
 export default {
+    data: () => ({
+        link: import.meta.env.VITE_APP_DEFAULT_IMAGES_LINK,
+        zoom: false
+    }),
+
     components: {
-        View
+        View,
+        ZoomImagePopup
+    },
+
+    props: {
+        post: {
+            type: Object,
+            required: true
+        }
+    },
+
+    methods: {
+        toggleZoom () {
+            this.zoom = !this.zoom; 
+        }
+    },
+
+    async mounted () {
+        setTimeout(async() => {
+            try {
+                const response = await axios.patch(`posts/views/${this.post.id}`);
+                console.log(response);
+                
+            }
+            catch (error) {
+                console.log(error);
+            }
+        }, 100);
     }
 }
 

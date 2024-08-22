@@ -1,4 +1,5 @@
 <template>
+  <Loading />
   <component :is="layout">
     <Router-view />
   </component>
@@ -7,6 +8,7 @@
 <script>
   import SiteLayout from '@/layouts/SiteLayout.vue';
   import BlogLayout from '@/layouts/BlogLayout.vue';
+  import Loading from '@/components/preloaders/Preloader.vue';
 
   export default {
     computed: {
@@ -17,7 +19,8 @@
 
     components: {
       SiteLayout,
-      BlogLayout
+      BlogLayout,
+      Loading
     },
   }
 </script>

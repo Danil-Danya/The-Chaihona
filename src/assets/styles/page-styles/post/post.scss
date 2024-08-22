@@ -8,11 +8,20 @@
         max-width: 940px;
         width: 100%;
         margin-bottom: 100px;
+
+        @include media ($xs) {
+            margin-bottom: 50px;
+        }
     }
 
     &-container {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
+
+        @include media ($xs) {
+            margin-bottom: 60px;
+        }
     }
 
     &__default {
@@ -23,6 +32,10 @@
             font-style: normal;
             font-weight: 600;
             line-height: normal;
+
+            @include media ($xs) {
+                font-size: 20px;
+            }
         }
     }
 }

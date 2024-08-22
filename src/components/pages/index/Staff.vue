@@ -85,6 +85,69 @@ export default {
 
     components: {
         StaffCard 
+    },
+
+    mounted () {
+        this.$nextTick(() => {       
+            if (window.innerWidth > 1000) {
+                this.$gsap.fromTo('.staff__text-short', {
+                    opacity: 0,
+                    y: -300,
+                }, {
+                    scrollTrigger: {
+                        trigger: '.staff__container',
+                        start: 'center 60%',
+                        end: 'bottom 60%',
+                    },
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.3,
+                })
+                this.$gsap.fromTo('.staff__text-wide', {
+                    opacity: 0,
+                    y: 300,
+                }, {
+                    scrollTrigger: {
+                        trigger: '.staff__container',
+                        start: 'center 60%',
+                        end: 'bottom 60%',
+                    },
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                })
+            }   
+            else {
+                this.$gsap.fromTo('.about__left', {
+                    opacity: 0,
+                    y: 50,
+                }, {
+                    scrollTrigger: {
+                        trigger: '.about__container',
+                        start: 'top 90%',
+                        end: 'bottom 60%',
+                        //scrub: true
+                    },
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.3,
+                })
+                this.$gsap.fromTo('.about__right', {
+                    opacity: 0,
+                    y: 50,
+                }, {
+                    scrollTrigger: {
+                        trigger: '.about__container',
+                        start: 'top 90%',
+                        end: 'bottom 60%',
+                        //scrub: true
+                    },
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.3,
+                })
+            }  
+        })
     }
 }
 

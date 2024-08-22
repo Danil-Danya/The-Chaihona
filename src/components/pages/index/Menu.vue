@@ -10,7 +10,7 @@
                 <div class="menu__set-item" v-for="item in setList" :key="item" ref="menuItem">
                     <img :src="item.img" alt="Menu" class="menu__set-item-img">
                     <div class="menu__set-item-backround"></div>
-                    <router-link to="" class="menu__set-item-link">
+                    <router-link :to="item.path" class="menu__set-item-link">
                         <p class="menu__set-item-text">{{ item.text }}</p>
                     </router-link>
                 </div>
@@ -21,27 +21,28 @@
 
 <script>
 
+
 export default {
     data: () => ({
         setList: [
             {
-                img: require('@/assets/images/menu/set.png'),
-                path: '',
+                img: require('@/assets/images/menu/set1.png'),
+                path: '/menu?menu_type=dish#first',
                 text: 'Первые блюда'
             },
             {
-                img: require('@/assets/images/menu/set.png'),
-                path: '',
+                img: require('@/assets/images/menu/set2.png'),
+                path: '/menu?menu_type=dish#national',
                 text: 'Вторые блюда'
             },
             {
-                img: require('@/assets/images/menu/set.png'),
-                path: '',
+                img: require('@/assets/images/menu/set3.png'),
+                path: '/menu?menu_type=dish#shashlyki',
                 text: 'Шашлыки'
             },
             {
-                img: require('@/assets/images/menu/set.png'),
-                path: '',
+                img: require('@/assets/images/menu/set4.png'),
+                path: '/menu?menu_type=dish#deserts',
                 text: 'Десерты'
             },
         ]
@@ -49,21 +50,41 @@ export default {
 
     methods: {
         changeMenuSize () {
+            const documentWidth = window.innerWidth;
+
             const menuItem = this.$refs.menuItem;
             const container = this.$refs.container;
 
-            console.log(213);
-
-            menuItem.forEach(item => {
-                item.style.width = container.clientWidth / menuItem.length + 'px';
-                item.style.height = container.clientWidth / menuItem.length + 'px';
-            });
+            if (documentWidth > 960) {
+                menuItem.forEach(item => {
+                    item.style.width = container.clientWidth / menuItem.length + 'px';
+                    item.style.height = container.clientWidth / menuItem.length + 'px';
+                });
+            }
         }
     },
 
     mounted () {
         this.$nextTick(() => {
             this.changeMenuSize();
+
+            if (window.innerWidth < 1000) {
+                this.$gsap.utils.toArray('.menu__set-item').forEach((item, index) => {
+                    this.$gsap.fromTo(item, {
+                        opacity: 0,
+                        y: 150,
+                    }, {
+                        scrollTrigger: {
+                            trigger: item,
+                            start: 'top 90%',
+                            end: 'bottom 60%',
+                        },
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.3,
+                    });
+                });
+            }
         })
         window.addEventListener('resize', () => this.changeMenuSize());
     }

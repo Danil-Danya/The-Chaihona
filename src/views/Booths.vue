@@ -13,6 +13,10 @@ export default {
     components: {
         Filter,
         Content
+    },
+
+    mounted () {
+        document.title = 'Кабинки чайхоны'
     }
 }
 

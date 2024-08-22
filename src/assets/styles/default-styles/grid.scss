@@ -58,10 +58,6 @@ $column: 12;
     }
 
     @include media($xs) {
-        max-width: $mini;
-    }
-
-    @include media($xs) {
         max-width: 100%;
     }
 }

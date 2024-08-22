@@ -5,6 +5,23 @@
         height: 400px;
         position: relative;
 
+        @include media ($md) {
+            max-width: 100%;
+            width: 100%;
+            min-height: 400;
+            height: auto;
+        }
+
+        &-swiper {
+            @include media ($md) {
+                width: 100%;
+            }
+        }
+
+        @include media ($md) {
+            width: 100%;
+        }
+
         &-container {
             display: flex;
             justify-content: center;
@@ -12,6 +29,10 @@
 
         &-slide {
             width: 100%;
+
+            @include media ($md) {
+                width: 100%;
+            }
         }
 
         &-img {
@@ -47,7 +68,7 @@
     }
 }
 
-.swiper-pagination {
+.buth-pagination {
     bottom: 20px !important;
     &-bullet {
         width: 10px !important;

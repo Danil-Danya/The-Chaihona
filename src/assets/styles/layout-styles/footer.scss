@@ -4,14 +4,24 @@
         justify-content: space-between;
         align-items: center;
         padding: 20px 0;
-            margin-bottom: 20px;
-            border-top: 1px solid $lineGray;
+        margin-bottom: 20px;
+        border-top: 1px solid $lineGray;
+        flex-wrap: wrap;
+    }
+
+    &__logo {
+        max-width: 405px;
+        width: 100%;
     }
 
     &__social {
         display: flex;
         gap: 16px;
         align-items: center;
+
+        &-mobile {
+            margin-top: 10px;
+        }
 
         &-text {
             color: $grayText;
@@ -25,6 +35,13 @@
         &-container {
             display: flex;
             gap: 12px;
+        }
+    }
+
+    &__action {
+        @include media ($xs) {
+            width: 100%;
+            margin-top: 20px;
         }
     }
 

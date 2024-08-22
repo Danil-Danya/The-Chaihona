@@ -18,42 +18,11 @@
                                     <img src="@/assets/images/slider/next.svg" alt="Arrow"  @click="slideNext">
                                 </button>
                             </div>
-                            <swiper ref="buthsSwiper"
-                                :effect="'coverflow'"
-                                :direction="'vertical'"
-                                :slides-per-view="3"
-                                :navigation="{
-                                    prevEl: '.slider-prev',
-                                    nextEl: '.slider-next',
-                                }"
-                                :coverflowEffect="{
-                                    rotate: 0,
-                                    scale: 0.8,
-                                    modifier: 1,
-                                    depth: 0,
-                                    slideShadows: false,
-                                }"
-                                :modules="modules"
-                                class="buths__slider"
-                            >
-                                <swiper-slide v-for="img in testImagesList" :key="img">
-                                    <div class="buths__item">
-                                        <div class="buths__img-container">
-                                            <img :src="img" alt="Slider Image" class="buths__item-img">
-                                        </div>
-                                        <div class="buths__item-content">
-                                            <div class="buths__item-content-container">
-                                                <h3 class="buths__item-title">Кабинка №1</h3>
-                                                <p class="buths__item-text">VIP-кабинка на 16 персон с лаунж-зоной. PS5, кальян, настольные игры, доступ к AllPlay, Netflix, ITV</p>
-                                            </div>
-                                            <div class="buths__button-container">
-                                                <Button :notation="buttonNotation" />
-                                                <Button :notation="buttonBorderedNotation" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </swiper-slide>
-                            </swiper>
+                            <div class="buths__sliders" ref="slider">
+                                <Slider v-if="width > 960" />
+                                <MobileSlider v-else />
+                            </div>
+                            <div class="buths-pagination"></div>
                         </div>
                     </div>
                 </div>
@@ -63,85 +32,52 @@
 </template>
 
 <script>
-
-import Button from "@/components/reused/Button.vue";
-
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Navigation, EffectCoverflow } from 'swiper/modules';
-
-import 'swiper/css/effect-coverflow';
-import 'swiper/css';
-//import 'swiper/css/pagination';
+import Slider from './Slider.vue';
+import MobileSlider from '@/components/mobile/SliderButhsIndex.vue';
 
 export default {
     data: () => ({
-        buttonNotation: {
-            text: 'Забронировать',
-            path: ''
-        },
-
-        buttonBorderedNotation: {
-            text: '360° тур',
-            path: '',
-            bordered: true,
-        },
-
-        testImagesList: [
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-        ]
+        width: window.innerWidth,
     }),
 
+    mounted () {
+        this.$nextTick(() => {
+            if (this.width > 1000) {
+                this.$gsap.fromTo('.buths__left', {
+                    opacity: 0,
+                    x: -100
+                }, {
+                    scrollTrigger: {
+                        trigger: '.buths__left',
+                        start: 'top 45%',
+                        end: 'center 50%',
+                    },
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.5
+                })
+    
+                this.$gsap.fromTo('.buths__right', {
+                    opacity: 0,
+                    x: 100
+                }, {
+                    scrollTrigger: {
+                        trigger: '.buths__right',
+                        start: 'top 45%',
+                        end: 'center 50%',
+                    },
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.5,
+                    delay: 0.3
+                })
+            }
+        })
+    },
+
     components: {
-        Button,
-        Swiper,
-        SwiperSlide
-    },
-
-    methods: {
-        slideNext() {
-            console.log(this.$refs.buthsSwiper.swiper);
-            this.$refs.buthsSwiper.swiper.slideNext();
-        },
-        slidePrev() {
-            this.$refs.buthsSwiper.swiper.slidePrev();
-        }
-    },
-
-     setup() {
-        return {
-            modules: [Navigation, EffectCoverflow],
-        };
+        Slider,
+        MobileSlider
     },
 }
 

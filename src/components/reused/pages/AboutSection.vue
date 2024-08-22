@@ -17,3 +17,71 @@
         </div>
     </section>
 </template>
+
+<script>
+export default {
+    mounted () {
+        this.$nextTick(() => {       
+            if (window.innerWidth > 1000) {
+                this.$gsap.fromTo('.about__left', {
+                    opacity: 0,
+                    x: -300,
+                }, {
+                    scrollTrigger: {
+                        trigger: '.about__container',
+                        start: 'top 90%',
+                        end: 'bottom 60%',
+                    },
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.3,
+                })
+                this.$gsap.fromTo('.about__right', {
+                    opacity: 0,
+                    x: 300,
+                }, {
+                    scrollTrigger: {
+                        trigger: '.about__container',
+                        start: 'top 90%',
+                        end: 'bottom 60%',
+                    },
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.3,
+                })
+            }   
+            else {
+                this.$gsap.fromTo('.about__left', {
+                    opacity: 0,
+                    y: 50,
+                }, {
+                    scrollTrigger: {
+                        trigger: '.about__container',
+                        start: 'top 90%',
+                        end: 'bottom 60%',
+                        //scrub: true
+                    },
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.3,
+                })
+                this.$gsap.fromTo('.about__right', {
+                    opacity: 0,
+                    y: 50,
+                }, {
+                    scrollTrigger: {
+                        trigger: '.about__container',
+                        start: 'top 90%',
+                        end: 'bottom 60%',
+                        //scrub: true
+                    },
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.3,
+                })
+            }  
+        })
+    }
+}
+
+</script>

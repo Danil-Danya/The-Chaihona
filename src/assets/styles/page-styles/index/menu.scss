@@ -1,9 +1,14 @@
 .menu {
     margin: 100px 0;
+    
+    @include media ($xs) {
+        margin-bottom: 50px;
+    }
 
     &__set {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
 
         &-content {
             display: flex;
@@ -135,5 +140,17 @@
     100% {
         opacity: 1 !important;
         transform: rotate(45deg);
+    }
+}
+
+@media (max-width: 960px) {
+    .menu {
+        &__set {
+            flex-wrap: wrap;
+            &-item {
+                width: 100%;
+                height: 300px;
+            }
+        }
     }
 }

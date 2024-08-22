@@ -4,12 +4,16 @@
     top: 0;
     z-index: 999;
     width: 100%;
-    padding: 20px 0;
-
+    
     &__content {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        height: 100px;
+
+        @include media ($xs) {
+            height: 80px;
+        }
     }
 
     &__contact {

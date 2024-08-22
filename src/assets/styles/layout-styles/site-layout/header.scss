@@ -1,8 +1,8 @@
 .header {
-    //position: relative;
+    position: relative;
 
     &__container {
-        background: url("@/assets/images/header/header-bg.png") no-repeat center /cover;
+        background: url("@/assets/images/header/header-bg.webp") no-repeat center /cover;
         height: 100vh;
         position: relative;
     }
@@ -55,6 +55,10 @@
         line-height: normal;
         max-width: 680px;
         width: 100%;
+
+        @include media ($xs) {
+            font-size: 47px;
+        }
     }
 
     &__description {
@@ -68,6 +72,10 @@
         max-width: 650px;
         width: 100%;
         margin: 32px 0;
+
+        @include media ($xs) {
+            font-size: 14px;
+        }
     }
 
     &__button {
@@ -84,6 +92,17 @@
         border-radius: 4px;
         border: none;
         transition: 300ms;
+        display: block;
+
+        @include media ($xs) {
+            width: 100%;
+        }
+
+        &-link {
+            @include media ($xs) {
+                width: 100%;
+            }
+        }
 
         &:hover {
             background: transparent;
@@ -94,6 +113,11 @@
         &-container {
             display: flex;
             gap: 16px;
+            flex-wrap: wrap;
+
+            @include media ($xs) {
+                width: 100%;
+            }
         }
     }
 }

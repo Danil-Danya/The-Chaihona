@@ -9,10 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "swiper": "^11.1.4",
+    "axios": "^1.7.3",
+    "gsap": "^3.12.5",
+    "swiper": "^11.1.9",
     "vite-plugin-require": "^1.2.14",
     "vue": "^3.4.21",
-    "vue-router": "^4.3.0"
+    "vue-router": "^4.3.0",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.4",

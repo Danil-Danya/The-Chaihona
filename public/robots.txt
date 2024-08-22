@@ -1,0 +1,6 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://thechoyhona.com/sitemap.xml
+Sitemap: https://thechoyhona.uz/sitemap.xml
+Sitemap: https://thechoyhona.az/sitemap.xml

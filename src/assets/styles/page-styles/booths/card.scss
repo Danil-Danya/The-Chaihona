@@ -5,7 +5,32 @@
     
     &__item {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap;
+
+        @include media ($md) {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+    }
+
+    &__slider {
+        &-swiper {
+            @include media ($md) {
+                width: 100%;
+            }
+        }
+
+        @include media ($md) {
+            width: 100%;
+        }
+    }
+
+    &__info {
+        width: 50%;
+        @include media ($md) {
+            width: 100%;
+        }
     }
 }

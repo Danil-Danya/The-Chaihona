@@ -1,4 +1,10 @@
 .blog {
+    &__title {
+        @include media ($md) {
+            text-align: center;
+        }
+    }
+
     &__card {
         max-width: 410px;
         width: 100%;
@@ -118,6 +124,10 @@
             justify-content: space-between;
             max-width: 835px;
             width: 100%;
+
+            @include media ($md) {
+                justify-content: center;
+            }
         }
 
         &-top {

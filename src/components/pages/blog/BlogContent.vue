@@ -6,9 +6,6 @@
                 <Blog />
                 <PopularBlog />
             </div>
-            <div class="blog__card-pagination">
-                <button class="button">Загрузить еще</button>
-            </div>
         </div>
     </div>
 </template>

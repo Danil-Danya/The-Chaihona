@@ -4,7 +4,9 @@
             <Navbar />
         </header>
         <main class="main">
-            <Router-view />
+            <keep-alive :exclude="['PostInfo']">
+                <Router-view />
+            </keep-alive>
         </main>
         <footer class="footer">
             <Footer />
@@ -16,11 +18,13 @@
 
 import Navbar from '@/components/layouts/blog-layout/Navbar.vue';
 import Footer from '@/components/layouts/Footer.vue';
+import MobileNavbar from '@/components/layouts/MobileNavbar.vue';
 
 export default {
     components: {
         Navbar,
-        Footer
+        Footer,
+        MobileNavbar
     },
 }
 

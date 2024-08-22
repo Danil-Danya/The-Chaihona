@@ -1,7 +1,7 @@
 <template>
     <div class="booths__slider">
         <div class="booths__slider-container">
-            <div class="booths__slider-navigation">
+            <div class="booths__slider-navigation" v-if="slide.images.length > 1">
                 <button class="booths__slider-button" :class="`slider-prev-${index}`" @click="slidePrev">
                     <img src="@/assets/images/booths/slider/prev.svg" alt="Arrow">
                 </button>
@@ -11,7 +11,9 @@
             </div>
         </div>
         <swiper class="booths__slider-swiper"
-            :pagination="true"
+            :pagination="{
+                bulletClass: 'booths-pagination'
+            }"
             :loop="true"
             :navigation="{
                 prevEl: `.slider-prev-${index}`,
@@ -19,8 +21,8 @@
             }"
             :modules="modules"
         >
-            <swiper-slide v-for="booths in boothsDataSet" :key="booths" class="booths__slider-slide">
-                <img :src="booths" alt="Slide" class="booths__slider-img">
+            <swiper-slide v-for="image in slide.images" :key="image" class="booths__slider-slide">
+                <img :src="link + image.path" alt="Slide" class="booths__slider-img">
             </swiper-slide>
         </swiper>
     </div>
@@ -37,22 +39,7 @@ import 'swiper/css';
 
 export default {
     data: () => ({
-        boothsDataSet: [
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-            require('@/assets/images/buths/buths.png'),
-        ]
+        link: import.meta.env.VITE_APP_DEFAULT_IMAGES_LINK,
     }),
 
     components: {
@@ -65,6 +52,11 @@ export default {
             type: Number,
             required: true,
         },
+
+        slide: {
+            type: Number,
+            required: true
+        }
     },
 
     methods: {

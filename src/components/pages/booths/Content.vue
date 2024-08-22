@@ -3,8 +3,8 @@
         <div class="content__container">
             <div class="container">
                 <div class="content__block">
-                    <h2 class="content__alert">Подходящие кабинки</h2>
-                    <Card :natation="cardNatation"/>
+                    <h2 class="content__alert">Подходящие кабинки:</h2>
+                    <Card :notation="cardNatation"/>
                 </div>
             </div>
         </div>
@@ -14,13 +14,47 @@
 <script>
 
 import Card from '@/components/pages/booths/card/Card.vue';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
     data: () => ({
-        cardNatation: [
-            { image: [] }
-        ]
+        cardNatation: []
     }),
+
+    computed: {
+        ...mapGetters(['getBuths']),
+    },
+
+    methods: {
+        ...mapActions(['fetchBuths']),
+
+        async updateBuths () {
+            const tags = this.$route.query.filter ? this.$route.query.filter.split('-').join(',') : null;
+
+            const params = {
+                limit: 16,
+                filter: {
+                    tags 
+                }
+            }
+
+            await this.fetchBuths(params);
+            this.cardNatation = this.getBuths.rows;
+        },
+    },
+
+    async mounted () {
+        await this.updateBuths()
+    },
+
+    watch: {
+        '$route.query': {
+            deep: true,
+            async handler () {
+                await this.updateBuths()
+            }
+        }
+    },
 
     components: {
         Card

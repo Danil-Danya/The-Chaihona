@@ -3,6 +3,21 @@
         max-width: 940px;
         width: 100%;
         margin: 24px 0 40px 0;
+
+        &-icon {
+            @include media ($xs) {
+                width: 50px;
+            }
+        }
+    }
+
+    &-video {
+        &-youtube {
+            @include media ($xs) {
+                height: 200px;
+                border-radius: 5px;
+            }
+        }
     }
 
     &__others {
@@ -10,6 +25,10 @@
             display: flex;
             gap: 10px;
             margin-bottom: 12px;
+
+            @include media ($xs) {
+                align-items: center;
+            }
         }
 
         &-text {
@@ -20,6 +39,10 @@
             font-style: normal;
             font-weight: 500;
             line-height: normal;
+
+            @include media ($xs) {
+                font-size: 14px;
+            }
         }
     }
 }

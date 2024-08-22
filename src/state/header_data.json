@@ -9,7 +9,7 @@
                 "text": "Посмотреть меню"
             },
             {
-                "path": "/booths",
+                "path": "https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167s",
                 "bordered": false,
                 "text": "Забронировать"
             }
@@ -20,7 +20,7 @@
         "description": "Узбекская кухня – это то, что может свести с ума одним видом. Про вкус мы молчим и просто готовим для вас национальные блюда в лучшем исполнении!",
         "buttons": [
             {
-                "path": "/booths",
+                "path": "https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167",
                 "bordered": false,
                 "text": "Забронировать"
             }
@@ -31,7 +31,7 @@
         "description": "Кабинки, рассчитанные на 8-10-12-14-16 человек, оснащены всем необходимым для комфортного времяпровождения в кругу друзей.",
         "buttons": [
             {
-                "path": "/booths",
+                "path": "https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167",
                 "bordered": false,
                 "text": "Забронировать"
             }

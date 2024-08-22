@@ -10,7 +10,7 @@
                         <img src="@/assets/images/blog/slider/next.svg" alt="Arrow"  @click="slideNext">
                     </button>
                     <swiper class="slider__bar-swiper"
-                        :slides-per-view="6"
+                        :slides-per-view="slides"
                         :spaceBetween="10"
                         :loop="true"
                         :navigation="{
@@ -20,7 +20,7 @@
                         :modules="modules"
                     >
                         <swiper-slide v-for="slide in sliderData" :key="slide">
-                            <a href="#"  class="button__round slider__bar-button" ref="button">{{ slide }}</a>
+                            <a :href="`/menu?menu_type=dish#${slide.hash}`"  class="button__round slider__bar-button" ref="button">{{ slide.name }}</a>
                         </swiper-slide>
                     </swiper>
                 </div>
@@ -39,16 +39,17 @@ import 'swiper/css';
 
 export default {
     data: () => ({
+        slides: 6,
         sliderData: [
-            'Первые блюда',
-            'Национальные блюда',
-            'Европейские блюда',
-            'Ассорти и сеты',
-            'Шашлыки',
-            'Холодные закуски',
-            'Горячие закуски',
-            'Салаты',
-            'Десерты',
+            { "name": "Первые блюда", "hash": "first" },
+            { "name": "Национальные блюда", "hash": "national" },
+            { "name": "Европейские блюда", "hash": "europian" },
+            { "name": "Ассорти и сеты", "hash": "set" },
+            { "name": "Шашлыки", "hash": "shashlyki" },
+            { "name": "Холодные закуски", "hash": "holodnye_zakuski" },
+            { "name": "Горячие закуски", "hash": "goryachie_zakuski" },
+            { "name": "Салаты", "hash": "salats" },
+            { "name": "Десерты", "hash": "deserts" }
         ]
     }),
 
@@ -59,11 +60,20 @@ export default {
 
     methods: {
         slideNext() {
-            console.log(this.$refs.buthsSwiper.swiper);
             this.$refs.barSwiper.swiper.slideNext();
         },
         slidePrev() {
             this.$refs.barSwiper.swiper.slidePrev();
+        },
+
+        changeSlides () {
+            const width =  window.innerWidth;
+
+            if (width < 960)
+                this.slides = 3;
+
+            if (width < 570)
+                this.slides = 1.8;
         }
     },
 
@@ -72,6 +82,10 @@ export default {
              modules: [Navigation, EffectCoverflow],
         };
     },
+
+    mounted () {
+        this.changeSlides()
+    }
 }
 
 </script>
