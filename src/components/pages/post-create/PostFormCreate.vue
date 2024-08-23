@@ -3,8 +3,13 @@
         <form class="create__form">
             <div class="product__titles-lang">
                 <div class="input__container">
+                    <label class="input-label" ref="emailLabel">URL адрес поста</label>
+                    <input type="text" class="input product__input-title" ref="emailInput" placeholder="roman-sayfulin-ob-uhode-iz-makro" v-model="unicalUrl">
+                    <p class="message">{{  }}</p>
+                </div>
+                <div class="input__container">
                     <label class="input-label" ref="emailLabel">Название поста на русском</label>
-                    <input type="text" class="input product__input-title" ref="emailInput" placeholder="Роман Сайфулин об уходе из Makro, открытии The Choyxona ресторане на берегу моря за $1 млн и мечтах о бане" v-model="titleEng">
+                    <input type="text" class="input product__input-title" ref="emailInput" placeholder="Роман Сайфулин об уходе из Makro, открытии The Choyxona ресторане на берегу моря за $1 млн и мечтах о бане" v-model="title">
                     <p class="message">{{  }}</p>
                 </div>
                 <div class="input__container">
@@ -40,35 +45,40 @@
             <div class="product__desctiptions">
                 <div class="textarea__container">
                     <label class="input-label" ref="emailLabel">Описание на русском</label>
-                    <textarea type="text" class="input product__input-title" ref="emailInput" v-model="description"></textarea>
+                    <textarea type="text" class="input product__input-title" ref="emailInput" v-model="descprtion"></textarea>
                     <p class="message">{{  }}</p>
                 </div>
                 <div class="textarea__container">
                     <label class="input-label" ref="emailLabel">Описание на английском</label>
-                    <textarea type="text" class="input product__input-title" ref="emailInput" v-model="descriptionEng"></textarea>
+                    <textarea type="text" class="input product__input-title" ref="emailInput" v-model="descprtionEng"></textarea>
                     <p class="message">{{  }}</p>
                 </div>
                 <div class="textarea__container">
                     <label class="input-label" ref="emailLabel">Описание на узбекском</label>
-                    <textarea type="text" class="input product__input-title" ref="emailInput" v-model="descriptionUzb"></textarea>
+                    <textarea type="text" class="input product__input-title" ref="emailInput" v-model="descprtionUzb"></textarea>
                     <p class="message">{{  }}</p>
                 </div>
                 <div class="textarea__container">
                     <label class="input-label" ref="emailLabel">Описание на айзербайджанском</label>
-                    <textarea type="text" class="input product__input-title" ref="emailInput" v-model="descriptionAzb"></textarea>
+                    <textarea type="text" class="input product__input-title" ref="emailInput" v-model="descprtionAzb"></textarea>
                     <p class="message">{{  }}</p>
                 </div>
             </div>
             <div class="product__video">
                 <div class="input__container">
                     <label class="input-label" ref="emailLabel">HTML код с YouTube</label>
-                    <input type="text" class="input product__input-title" ref="emailInput" placeholder="<iframe width='1280' height='720' src='https://www.youtube.com/embed/u2aoDYDS2U4' title='Роман с Чайхоной. Как Роман Сайфулин смог всех удивить'> </iframe>" v-model="tour">
+                    <input type="text" class="input product__input-title" ref="emailInput" placeholder="<iframe width='1280' height='720' src='https://www.youtube.com/embed/u2aoDYDS2U4' title='Роман с Чайхоной. Как Роман Сайфулин смог всех удивить'> </iframe>" v-model="video">
                     <p class="message">{{  }}</p>
                 </div>
+                <!-- <div class="textarea__container">
+                    <label class="input-label" ref="emailLabel">Ссылки на похожие видео</label>
+                    <textarea type="text" class="input product__input-title" ref="emailInput" v-model="videosLink"></textarea>
+                    <p class="message">{{  }}</p>
+                </div> -->
             </div>
             <div class="product__buttons">
                 <div class="create__button-сontainer">
-                    <button class="create__button" type="submit" @submit.prevent="">Добавить</button>
+                    <button class="create__button" type="submit" @click.prevent="createPost">Добавить</button>
                     <button class="create__button" @click.prevent="clearAll">Очистить</button>
                 </div>
             </div>
@@ -82,9 +92,10 @@ import Plus from '@/components/icons/Plus.vue';
 import Minus from '@/components/icons/Minus.vue';
 import Images from '@/components/icons/Images.vue';
 
+import axios from '@/api/axios';
+
 export default {
     data: () => ({
-        persones: 10,
         title: '',
         titleEng: '',
         titleUzb: '',
@@ -93,6 +104,7 @@ export default {
         descprtionUzb: '',
         descprtionEng: '',
         descprtionAzb: '',
+        video: '',
         images: [],
         blobs: []
     }),
@@ -105,11 +117,74 @@ export default {
 
     methods: {
         setImages (event) {
-            this.images = Array.from(event.target.files);
-            this.images.forEach(file => {
+            const images = Array.from(event.target.files);
+            images.forEach((file) => {
                 this.blobs.push(URL.createObjectURL(file));
-            })
-            console.log(this.blobs);
+                this.images.push(file);
+            });
+        },
+
+        generatePostUrl() {
+            this.unicalUrl = this.unicalUrl.replace(/[^a-zA-Z0-9\s]/g, '');
+            this.unicalUrl = this.unicalUrl.replace(/\s+/g, '-');
+        },
+
+        async createPost () {
+            this.generatePostUrl();
+            
+            const {
+                title,
+                titleEng,
+                titleUzb,
+                titleAzb,
+                descprtion,
+                descprtionUzb,
+                descprtionEng,
+                descprtionAzb,
+                unicalUrl,
+                video,
+                images,
+            } = this;
+
+            let descprtions = descprtion ? descprtion.split("\n") : [descprtion];
+            let descprtionsAzb = descprtionAzb ? descprtionAzb.split("\n") : [descprtionAzb];
+            let descprtionsEng = descprtionEng ? descprtionEng.split("\n") : [descprtionEng];
+            let descprtionsUzb = descprtionUzb ? descprtionUzb.split("\n") : [descprtionUzb];
+
+
+            try {
+                const formData = new FormData();
+
+                formData.append('title', title);
+                formData.append('unicalUrl', unicalUrl);
+                formData.append('titleEng', titleEng);
+                formData.append('titleUzb', titleUzb);
+                formData.append('titleAzb', titleAzb);
+                formData.append('description', JSON.stringify(descprtions));
+                formData.append('descriptionEng', JSON.stringify(descprtionsEng));
+                formData.append('descriptionUzb', JSON.stringify(descprtionsUzb));
+                formData.append('descriptionAzb', JSON.stringify(descprtionsAzb));
+                formData.append('video', video);
+                formData.append('image', images[0])
+
+                const params = {
+                    region: localStorage.getItem('region')
+                }
+
+                const response = await axios.post('posts', formData, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    },
+                    params
+                });
+
+                if (response.status === 200) {
+                    location.reload();
+                }
+            }
+            catch (error) {
+                console.log(error);
+            }
         },
 
         deleteImage (index) {

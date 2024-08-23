@@ -31,7 +31,7 @@
                 <p class="table__text-bold"></p>
             </div>
             <div class="table__image table__top">
-                <img src="http://localhost:5000/files/" alt="Preview" class="table__img">
+                <img src="http://185.208.206.75:5000/files/" alt="Preview" class="table__img">
             </div>
             <div class="table__titles table__top">
                 <p class="table__text-bold">Роман Сайфулин об уходе из Makro, открытии The Choyxona ресторане на берегу моря за $1 млн и мечтах о бане</p>
@@ -80,16 +80,16 @@ export default {
     },
 
     computed: {
-        ...mapGetters(['getBuths'])
+        ...mapGetters(['getPosts'])
     },
     
     methods: {
-        ...mapActions(['fetchBuths'])
+        ...mapActions(['fetchPosts'])
     },
 
     async mounted () {
-        await this.fetchBuths();
-        this.buths = this.getBuths.rows;
+        await this.fetchPosts();
+        this.buths = this.getPosts.rows;
     }
 }
 

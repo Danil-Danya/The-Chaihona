@@ -31,7 +31,7 @@
                 <p class="table__text-bold">{{ index+=1 }}</p>
             </div>
             <div class="table__image table__top">
-                <img :src="`http://localhost:5000/files/${buth.images[0].path}`" alt="Preview" class="table__img">
+                <img :src="`http://185.208.206.75:5000/files/${buth.images[0].path}`" alt="Preview" class="table__img">
             </div>
             <div class="table__titleses table__top">
                 <p class="table__text-bold">{{ buth.title }}</p>
