@@ -4,11 +4,10 @@
             <div class="container">
                 <div class="filter__content">
                     <div class="filter__select-container">
-                        <select name="" id="" class="filter__select" v-model="persones" @input="selectPersones">
-                            <option>Без ограничений</option>
-                            <option :value="opt" v-for="opt in 16" :key="opt">Количество персон: {{ opt }}</option>
+                        <select class="filter__select" v-model="persones" @input="selectPersones">
+                            <option :value="opt" v-for="opt in presonesOpt" :key="opt">Количество персон: {{ opt }}</option>
                         </select>
-                        <select name="" id="" class="filter__select" @input="selectOptions($event)">
+                        <select class="filter__select" @input="selectOptions($event)">
                             <option default>Опции</option>
                             <option :value="opt" v-for="opt in options" :key="opt">{{ opt }}</option>
                         </select>
@@ -30,6 +29,7 @@ export default {
       data: () => ({
         persones: 10,
         options: ['PS5', 'Netflix', 'Кальян', 'AllPlay', 'ITV', 'Настольные игры'],
+        presonesOpt: ['любые', 6, 10, 12, 14, 16, 22],
         selectedOptions: [],
         params: '',
         width: window.innerWidth
@@ -50,7 +50,14 @@ export default {
         },
 
         selectPersones () {
-            this.$router.replace({query: {persones: this.persones}});
+            setTimeout(() => {
+                if (typeof this.persones === 'number') {
+                    this.$router.replace({query: {persones: this.persones}});
+                }
+                else {
+                    this.$router.replace({query: {}});
+                }
+            }, 10);
         },
 
         deleteOptions (index) {

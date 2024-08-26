@@ -30,10 +30,12 @@ export default {
 
         async updateBuths () {
             const tags = this.$route.query.filter ? this.$route.query.filter.split('-').join(',') : null;
+            const presones = this.$route.query.persones;
 
             const params = {
                 limit: 16,
                 filter: {
+                    presones,
                     tags 
                 }
             }

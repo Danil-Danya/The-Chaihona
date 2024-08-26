@@ -50,7 +50,7 @@ export default {
         ],
         mapList: [
             { icon: 'Yandex', link: 'https://yandex.uz/maps/org/the_choyxona/193687795731/?ll=69.314788%2C41.332788&z=17' },
-            { icon: 'Tripadvisor', link: '' },
+            { icon: 'Tripadvisor', link: 'https://www.tripadvisor.ru/Restaurant_Review-g293968-d24062543-Reviews-The_Choyxona-Tashkent_Tashkent_Province.html' },
             { icon: 'Google', link: 'https://maps.app.goo.gl/yksHkoyjgfVCD4qt6' },
         ]
     }),

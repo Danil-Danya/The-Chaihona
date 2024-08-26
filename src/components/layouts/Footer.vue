@@ -37,7 +37,7 @@
                         </ul>
                     </div>
                     <div class="footer__action">
-                        <a href="https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167" class="button">Забронировать</a>
+                        <a href="https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167" class="button footer__button">Забронировать</a>
                     </div>
                     <div class="footer__social footer__social-mobile" v-if="width < 960">
                         <p class="footer__social-text">Следите за новостями</p>

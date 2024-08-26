@@ -51,6 +51,7 @@ export default {
                         trigger: '.buths__left',
                         start: 'top 45%',
                         end: 'center 50%',
+                        markers: true
                     },
                     opacity: 1,
                     x: 0,

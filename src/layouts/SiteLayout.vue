@@ -23,6 +23,8 @@ import Navbar from '@/components/layouts/site-layout/Navbar.vue';
 import Footer from '@/components/layouts/Footer.vue';
 import Icon from '@/components/icons/360/360.vue';
 
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
 export default {
     components: {
         Header,
@@ -30,6 +32,54 @@ export default {
         Footer,
         Icon
     },
+
+    watch: {
+        '$route': {
+            deep: true,
+            handler () {
+                this.$nextTick(() => {
+                    ScrollTrigger.refresh()
+                    console.log(this.$gsap);
+                    this.$gsap.registerPlugin(ScrollTrigger);
+                    
+                    setTimeout(() => {
+                        this.$gsap.fromTo('.tour-button',{
+                            y: 0,
+                            opacity: 1
+                        }, {
+                            scrollTrigger: {
+                                trigger: '.footer',
+                                start: 'top +90%',
+                                end: 'top +60%',
+                                scrub: true,
+                            },
+                            y: 20,
+                            opacity: 0
+                        })
+                    }, 1000);
+                })
+            }
+        }
+    },
+
+
+    mounted () {
+       setTimeout(() => {
+            this.$gsap.fromTo('.tour-button',{
+                y: 0,
+                opacity: 1
+            }, {
+                scrollTrigger: {
+                    trigger: '.footer',
+                    start: 'top +90%',
+                    end: 'top +60%',
+                    scrub: true,
+                },
+                y: 20,
+                opacity: 0
+            })
+        }, 1000);
+    }
 }
 
 </script>

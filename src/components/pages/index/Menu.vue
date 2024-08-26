@@ -2,6 +2,9 @@
     <section class="menu">
         <div class="menu__container">
             <div class="container">
+                <div class="menu__ornament-container">
+                    <Ornament :class="`menu__ornament-${ornament}`" v-for="ornament in 2" :key="ornament" />
+                </div>
                 <div class="menu__set-content">
                     <h2 class="title menu__set-title">Откройте для себя новые вкусы ваших любимых блюд</h2>
                 </div>
@@ -20,9 +23,13 @@
 </template>
 
 <script>
-
+import Ornament from '@/components/icons/notfound/OrnamentLeft.vue'
 
 export default {
+    components: {
+        Ornament
+    },
+
     data: () => ({
         setList: [
             {

@@ -5,13 +5,26 @@
             <SliderBar />
         </section>
         <div class="menu__component">
-            <div class="container">
-                <FirstDish />
-                <NationsDish />
-                <EuropeanDish />
-                <SetDish />
-                <OtherDish />
-            </div>
+            <transition name="fade" :duration="300">
+                <div class="container" v-if="$route.query.menu_type === 'dish'">
+                    <FirstDish />
+                    <NationsDish />
+                    <EuropeanDish />
+                    <SetDish />
+                    <OtherDish />
+                </div>
+            </transition>
+            <transition name="fade" :duration="300">
+                <div class="container" v-if="$route.query.menu_type === 'drinks'">
+                    <BearAndVodka />
+                    <OtherBarDrinks />
+                    <KognackAndTequilla />
+                    <Vine />
+                    <CoffeAndTea />
+                    <WaterAndDrinks />
+                    <LimonadeAndCoctale />
+                </div>
+            </transition>
         </div>
     </div>
 </template>
@@ -25,6 +38,13 @@ import NationsDish from '@/components/pages/menu/menu_categories/NationsDish.vue
 import EuropeanDish from '@/components/pages/menu/menu_categories/EuropeanDish.vue';
 import SetDish from '@/components/pages/menu/menu_categories/SetDish.vue';
 import OtherDish from '@/components/pages/menu/menu_categories/OtherDish.vue';
+import BearAndVodka from '@/components/pages/menu/menu_categories/BearAndVodka.vue';
+import OtherBarDrinks from '@/components/pages/menu/menu_categories/OtherBarDrinks.vue';
+import Vine from '@/components/pages/menu/menu_categories/Vine.vue';
+import CoffeAndTea from '@/components/pages/menu/menu_categories/CofeeAndTea.vue'
+import WaterAndDrinks from '@/components/pages/menu/menu_categories/WaterAndDrinks.vue';
+import LimonadeAndCoctale from '@/components/pages/menu/menu_categories/LimonadeAndCoctale.vue';
+import KognackAndTequilla from '@/components/pages/menu/menu_categories/KognackAndTequilla.vue';
 
 export default {
     components: {
@@ -34,7 +54,14 @@ export default {
         NationsDish,
         EuropeanDish,
         SetDish,
-        OtherDish
+        OtherDish,
+        BearAndVodka,
+        OtherBarDrinks,
+        Vine,
+        CoffeAndTea,
+        WaterAndDrinks,
+        LimonadeAndCoctale,
+        KognackAndTequilla
     },
 
     mounted () {

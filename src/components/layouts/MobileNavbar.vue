@@ -31,12 +31,12 @@
             <div class="navbar__mobile-contacts">
                 <ul class="navbar__mobile-contacts-ul">
                     <li v-for="item in contacts" :item >
-                        <router-link :to="item.path" class="navbar__mobile-contacts-li">
+                        <a :href="item.path" class="navbar__mobile-contacts-li">
                             <span class="navbar__mobile-icon">
                                 <component :is="item.icon" />
                             </span>
                             <p class="navbar__mobile-contacts-text">{{ item.text }}</p>
-                        </router-link>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -46,8 +46,8 @@
 
 <script>
 
-import Location from '@/components/icons/navbar/mobile/Location.vue';
-import Phone from '@/components/icons/navbar/mobile/Phone.vue';
+import  Phone from '@/components/icons/navbar/mobile/Location.vue';
+import Location from '@/components/icons/navbar/mobile/Phone.vue';
 import Ornament from '@/components/icons/ornaments/Ornament.vue';
 
 export default {

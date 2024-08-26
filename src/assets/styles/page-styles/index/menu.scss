@@ -1,8 +1,26 @@
 .menu {
     margin: 100px 0;
+    position: relative;
     
     @include media ($xs) {
         margin-bottom: 50px;
+    }
+
+    &__ornament {
+        &-1 {
+            @include media ($xs) {
+                display: none;
+            }
+        }
+
+        &-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            position: absolute;
+            top: -200px;
+            left: 0;
+        }
     }
 
     &__set {

@@ -25,8 +25,8 @@ export default {
     data: () => ({
         imagesList: [
             require('@/assets/images/galery/galery1.png'),
-            require('@/assets/images/galery/galery1.png'),
-            require('@/assets/images/galery/galery1.png'),
+            require('@/assets/images/galery/galery5.png'),
+            require('@/assets/images/galery/galery6.png'),
             require('@/assets/images/galery/galery2.png'),
             require('@/assets/images/galery/galery3.png'),
             require('@/assets/images/galery/galery4.png'),

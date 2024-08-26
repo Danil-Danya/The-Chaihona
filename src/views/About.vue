@@ -17,7 +17,7 @@ export default {
     },
 
     mounted () {
-        document.title = 'The Choyhona - о сервисе'
+        document.title = 'The Choyhona - о сервисе';
     }
 }
 </script>

@@ -1,5 +1,5 @@
 <template>
-    <div class="slider__bar">
+    <div class="slider__bar" :key="componentKey">
         <div class="slider__bar-container">
             <div class="container">
                 <div class="slider__bar-content">
@@ -18,9 +18,13 @@
                             nextEl: '.slider-next',
                         }"
                         :modules="modules"
+                        ref="barSwiper"
                     >
-                        <swiper-slide v-for="slide in sliderData" :key="slide">
-                            <a :href="`/menu?menu_type=dish#${slide.hash}`"  class="button__round slider__bar-button" ref="button">{{ slide.name }}</a>
+                        <swiper-slide v-for="slide in sliderDataDish" :key="slide" v-if="$route.query.menu_type === 'dish'">
+                            <a :href="`/menu?menu_type=dish#${slide.hash}`" class="button__round slider__bar-button" ref="button">{{ slide.name }}</a>
+                        </swiper-slide>
+                        <swiper-slide v-for="slideDrinks in sliderDateDrinks" :key="slideDrinks" v-else>
+                            <a :href="`/menu?menu_type=drinks#${slideDrinks.hash}`" class="button__round slider__bar-button" ref="button">{{ slideDrinks.name }}</a>
                         </swiper-slide>
                     </swiper>
                 </div>
@@ -40,7 +44,8 @@ import 'swiper/css';
 export default {
     data: () => ({
         slides: 6,
-        sliderData: [
+        componentKey: 0,
+        sliderDataDish: [
             { "name": "Первые блюда", "hash": "first" },
             { "name": "Национальные блюда", "hash": "national" },
             { "name": "Европейские блюда", "hash": "europian" },
@@ -50,7 +55,22 @@ export default {
             { "name": "Горячие закуски", "hash": "goryachie_zakuski" },
             { "name": "Салаты", "hash": "salats" },
             { "name": "Десерты", "hash": "deserts" }
-        ]
+        ],
+        sliderDateDrinks: [
+            { "name": "Пиво", "hash": "first" },
+            { "name": "Gin", "hash": "national" },
+            { "name": "Водка", "hash": "europian" },
+            { "name": "Rum", "hash": "set" },
+            { "name": "Виски", "hash": "shashlyki" },
+            { "name": "Tequila", "hash": "holodnye_zakuski" },
+            { "name": "Вино", "hash": "goryachie_zakuski" },
+            { "name": "Чай", "hash": "salats" },
+            { "name": "Кофе", "hash": "deserts" },
+            { "name": "Коктейли", "hash": "deserts" },
+            { "name": "Вода", "hash": "deserts" },
+            { "name": "Лимонады", "hash": "deserts" },
+            { "name": "Напитки", "hash": "deserts" },
+        ],
     }),
 
     components: {
@@ -74,6 +94,19 @@ export default {
 
             if (width < 570)
                 this.slides = 1.8;
+        },
+
+        reinitSwiper() {
+            this.componentKey += 1;
+        }
+    },
+
+    watch: {
+        '$route.query': {
+            handler() {
+                this.reinitSwiper(); 
+            },
+            deep: true
         }
     },
 

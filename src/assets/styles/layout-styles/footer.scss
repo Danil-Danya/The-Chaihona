@@ -12,6 +12,18 @@
     &__logo {
         max-width: 405px;
         width: 100%;
+
+        @include media ($xs) {
+            width: 80%;
+        }
+    }
+
+    &__button {
+        @include media ($xs) {
+            display: block;
+            max-width: 100% !important;
+            width: 100% !important;
+        }
     }
 
     &__social {
@@ -46,6 +58,10 @@
     }
 
     &__bar {
+        @include media ($xs) {
+            margin: 30px 0;
+        }
+
         &-container {
             display: flex;
             flex-direction: column;
@@ -77,6 +93,10 @@
         }
     }
     &__contacts {
+        @include media ($xs) {
+            margin: 30px 0;
+        }
+
         &-container {
             display: flex;
             flex-direction: column;
