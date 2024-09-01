@@ -7,10 +7,10 @@
                         <div class="adbout__logo-container">
                             <img src="@/assets/images/about/logo.svg" alt="Logo" class="about__logo">
                         </div>
-                        <p class="about__text">это слияние восточных традиций и западных трендов, а также широкий ассортимент блюд национальной и европейской кухни.</p>
+                        <p class="about__text">{{ $t('index.about.leftText') }}</p>
                     </div>
                     <div class="about__right">
-                        <p class="about__text">Ресторан нового формата — это про атмосферу, эстетическое удовольствие, комфорт и ощущение уверенности в пространстве, сервисе и кухне. Одним из заведений, соответствующих требованиям новой реальности, является <strong>The Choyxona.</strong></p>
+                        <p class="about__text">{{ $t('index.about.rightText') }}<strong>{{ $t('index.about.strongText') }}</strong></p>
                     </div>
                 </div>
             </div>

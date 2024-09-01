@@ -1,6 +1,6 @@
 <template>
     <div class="menu__content" id="first">
-        <h2 class="title menu__title">Вино</h2>
+        <h2 class="title menu__title" id="vino">Вино</h2>
         <div class="menu__card-container">
             <div class="menu__content-container-vine">
                 <div class="menu__item menu__item-vine" v-for="product in products" :key="product">

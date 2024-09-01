@@ -6,7 +6,7 @@
                     <Ornament :class="`menu__ornament-${ornament}`" v-for="ornament in 2" :key="ornament" />
                 </div>
                 <div class="menu__set-content">
-                    <h2 class="title menu__set-title">Откройте для себя новые вкусы ваших любимых блюд</h2>
+                    <h2 class="title menu__set-title">{{ $t('index.menu.title') }}</h2>
                 </div>
             </div>
             <div class="menu__set" ref="container">
@@ -74,6 +74,11 @@ export default {
     mounted () {
         this.$nextTick(() => {
             this.changeMenuSize();
+            this.setList.forEach((item, index) => {
+                item.text = this.$i18n.messages[localStorage.getItem('locale')]
+                                .index.menu.cards[index];
+            });
+
 
             if (window.innerWidth < 1000) {
                 this.$gsap.utils.toArray('.menu__set-item').forEach((item, index) => {

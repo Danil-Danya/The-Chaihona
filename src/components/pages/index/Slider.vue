@@ -25,11 +25,15 @@
                 </div>
                 <div class="buths__item-content">
                     <div class="buths__item-content-container">
-                        <h3 class="buths__item-title">{{ slide.title }}</h3>
-                        <p class="buths__item-text">{{ slide.descriptions[0].description_unit }}</p>
+                        <h3 class="buths__item-title" v-if="locale === 'rus'">{{ slide.title }}</h3>
+                        <h3 class="buths__item-title" v-if="locale === 'eng'">{{ slide.title_eng }}</h3>
+                        <h3 class="buths__item-title" v-if="locale === 'uzb'">{{ slide.title_uzb }}</h3>
+                        <p class="buths__item-text" v-if="locale === 'rus'">{{ slide.descriptions[0].description_unit }}</p>
+                        <p class="buths__item-text" v-if="locale === 'eng'">{{ slide.descriptions[0].description_unit_eng }}</p>
+                        <p class="buths__item-text" v-if="locale === 'uzb'">{{ slide.descriptions[0].description_unit_uzb }}</p>
                     </div>
                     <div class="buths__button-container">
-                        <a href="https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167" class="button">Забронировать</a>
+                        <a href="https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167" class="button">{{ $t('buttonNotation.text') }}</a>
                         <!-- <Button :notation="buttonBorderedNotation" /> -->
                     </div>
                 </div>
@@ -51,6 +55,7 @@ import 'swiper/css';
 
 export default {
     data: () => ({
+        locale: localStorage.getItem('locale'),
         buttonBorderedNotation: {
             text: '360° тур',
             path: '',

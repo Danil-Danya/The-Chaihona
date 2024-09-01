@@ -48,7 +48,8 @@ export default {
 
     async mounted () {
         const params = {
-            categories_id: 4
+            categories_id: 4,
+            limit: 1000
         }
         await this.fetchProducts(params);
         this.products = this.getProducts.rows;

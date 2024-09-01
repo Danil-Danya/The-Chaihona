@@ -4,11 +4,14 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+
+// import plugins
 import gsap from './plugins/gsap';
+import i18n from './plugins/i18n';
 
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(router).use(store).use(gsap);
+app.use(router).use(store).use(gsap).use(i18n);
 
 app.mount('#app')

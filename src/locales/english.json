@@ -1,0 +1,170 @@
+{
+    "navbar": {
+        "navList": [
+            { "path": "https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167", "text": "Book Now" },
+            { "path": "/menu", "text": "Menu" },
+            { "path": "/booths", "text": "Booths" },
+            { "path": "/about", "text": "About Us" },
+            { "path": "/blog", "text": "Blog" },
+            { "path": "/about#staff", "text": "Golden Hands" }
+        ],
+        "contactList": [
+            { "path": "https://yandex.uz/maps/org/the_choyxona/193687795731/?ll=69.314788%2C41.332788&z=17", "text": "Tashkent, Bogishamol Ave, 131", "icon": "Location" },
+            { "path": "tel:+998998448888", "text": "+998 (99) 844-88-88", "icon": "Phone" }
+        ]
+    },        
+    "footer": {
+        "socialList": [
+            {
+                "icon": "facebook", 
+                "path": "https://www.facebook.com/thechoyxona"
+            },
+            {
+                "icon": "instagram", 
+                "path": "https://www.instagram.com/thechoyxona"
+            },
+            {
+                "icon": "telegram", 
+                "path": "https://t.me/thechoyxona"
+            }
+        ],
+        "barList": [
+            { "path": "/menu", "text": "Menu" },
+            { "path": "/booths", "text": "Booths" },
+            { "path": "/about", "text": "About Us" }
+        ],
+        "contactList": [
+            { "icon": "Location", "text": "Tashkent, Bogishamol Ave, 131", "path": "https://yandex.uz/maps/org/the_choyxona/193687795731/?ll=69.314788%2C41.332788&z=17" },
+            { "icon": "Phone", "text": "+998 (99) 844-88-88", "path": "tel:+998998448888" },
+            { "icon": "Clock", "text": "Every day from 08:00 AM to 11:00 PM" }
+        ]
+    },    
+    "buttonNotation": {
+        "text": "Book Now",
+        "path": ""
+    },
+    "index": {
+        "about": {
+            "leftText": "this is a fusion of Eastern traditions and Western trends, as well as a wide variety of national and European cuisine.",
+            "rightText": "A new format restaurant is all about atmosphere, aesthetic pleasure, comfort, and a sense of confidence in the space, service, and cuisine. One of the establishments that meets the requirements of the new reality is ",
+            "strongText": "The Choyxona."
+        },
+        "menu": {
+            "title": "Discover new flavors of your favorite dishes",
+            "cards": ["First Courses", "Main Courses", "Shashlik", "Desserts"]
+        },
+        "booths": {
+            "title": "Private Oases",
+            "strongText": "The Choyxona",
+            "text": ", located in a secluded corner of the city center, resembles the private gazebos of a country house, where you can gather with a large group in one of the 13 new-format booths."
+        },
+        "staff": {
+            "title": "Golden Hands",
+            "textLeft": "Our chefs are true culinary wizards, capable of turning an ordinary meal into a celebration for your taste buds.",
+            "textRight": "With love and care, they select the finest ingredients, creating dishes that inspire, delight, and leave unforgettable memories. Their talent and passion for cooking are evident in every detail, in every aroma, making you want to return to us again and again.",
+            "text": "More information in the section",
+            "link": "About Us",
+            "staffList": [
+                {
+                    "name": "Sunnatkhuzhaev Samandar",
+                    "post": "European Cuisine Chef •",
+                    "experience": "5 years",
+                    "slogan": "Jedi of the kitchen"
+                },
+                {
+                    "name": "Akromov Akhror",
+                    "post": "Sous Chef •",
+                    "experience": "8 years",
+                    "slogan": "Wise Sensei",
+                    "class": "staff__slogan-long"
+                }
+            ]
+        },        
+        "blog": {
+        "title": "Events"
+        },
+        "contacts": {
+            "title": "We look forward to seeing you at",
+            "contactsList": [
+                { "icon": "Location", "text": "Tashkent, Bogishamol Ave, 131" },
+                { "icon": "Phone", "text": "+998 (99) 844-88-88" },
+                { "icon": "Time", "text": "Every day from 08:00 AM to 11:00 PM" }
+            ]
+        }
+    },
+    "menu": {
+        "switcher": {
+            "dish": "Main Menu",
+            "bar": "Bar Menu"
+        },
+        "sliderBar": {
+            "sliderDataDish": [
+                { "name": "First Courses", "hash": "first" },
+                { "name": "National Dishes", "hash": "national" },
+                { "name": "European Dishes", "hash": "europian" },
+                { "name": "Assortments and Sets", "hash": "set" },
+                { "name": "Shashlik", "hash": "shashlyki" },
+                { "name": "Cold Appetizers", "hash": "holodnye_zakuski" },
+                { "name": "Hot Appetizers", "hash": "goryachie_zakuski" },
+                { "name": "Salads", "hash": "salats" },
+                { "name": "Desserts", "hash": "deserts" }
+            ],
+            "sliderDateDrinks": [
+                { "name": "Beer", "hash": "pivo" },
+                { "name": "Gin", "hash": "gin" },
+                { "name": "Vodka", "hash": "vodka" },
+                { "name": "Rum", "hash": "rum" },
+                { "name": "Whiskey", "hash": "viski" },
+                { "name": "Tequila", "hash": "tekilla" },
+                { "name": "Wine", "hash": "vino" },
+                { "name": "Tea", "hash": "chay" },
+                { "name": "Coffee", "hash": "coffee" },
+                { "name": "Cocktails", "hash": "kokteyli" },
+                { "name": "Water", "hash": "water" },
+                { "name": "Lemonades", "hash": "lemonade" },
+                { "name": "Drinks", "hash": "napitki" }
+            ]
+        },
+        "unit": "sum",
+        "titles": [
+            "First Courses",
+            "National Dishes",
+            "European Dishes",
+            "Assortments and Sets",
+            "Shashlik",
+            "Cold Appetizers",
+            "Hot Appetizers",
+            "Salads",
+            "Desserts",
+            "Beer",
+            "Vodka",
+            "Whiskey",
+            "Gin",
+            "Rum",
+            "Cognac",
+            "Tequila",
+            "Wine",
+            "Coffee",
+            "Tea",
+            "Water",
+            "Drinks",
+            "Cocktails",
+            "Lemonades"
+        ]
+    },
+    "booths": {
+        "filters": {
+            "persones": "Количество персон:",
+            "opyions": "Опции",
+            "title": "Подходящие кабинки:"
+        }
+    },
+    "blog": {
+        "title": "Актуальные статьи",
+        "link": "link",
+        "top": "Топ статьи",
+        "search": "Найти статью",
+        "news": "Следите за новостями:",
+        "video": "Видео-версия статьи"
+    }
+}

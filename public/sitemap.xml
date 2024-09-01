@@ -25,6 +25,38 @@
         <priority>0.5</priority>
         <changefreq>yearly</changefreq>
     </url>
+    <!-- Посты -->
+    <url>
+        <loc>https://thechoyhona.uz/post/roman-sayfulin-ob-uhode-iz-makro</loc>
+        <priority>0.6</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://thechoyhona.uz/post/facty-o-plove</loc>
+        <priority>0.6</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://thechoyhona.uz/post/choyhona-novogo-formata</loc>
+        <priority>0.6</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://thechoyhona.uz/post/fakty-o-choyhone</loc>
+        <priority>0.6</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <!-- Меню -->
+    <url>
+        <loc>https://thechoyhona.uz/menu?menu_type=dish</loc>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+    </url>
+    <url>
+        <loc>https://thechoyhona.uz/menu?menu_type=drinks</loc>
+        <priority>0.7</priority>
+        <changefreq>monthly</changefreq>
+    </url>
     <!-- Пример страницы поста -->
     <url>
         <loc>https://thechoyhona.uz/post/sample-post</loc>

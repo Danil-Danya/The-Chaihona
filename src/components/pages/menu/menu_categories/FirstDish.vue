@@ -18,6 +18,9 @@
                                 <li>
                                     <p class="menu__item-text">{{product.time}}</p>
                                 </li>
+                                <li v-if="product.min_count">
+                                    <p class="menu__item-text">Минимальная проция: {{product.min_count}} штук</p>
+                                </li>
                             </ul>
                         </div>
                     </div>

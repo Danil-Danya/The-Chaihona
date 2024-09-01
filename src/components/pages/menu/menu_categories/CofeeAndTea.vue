@@ -2,7 +2,7 @@
     <div class="menu__content" id="first">
         <div class="menu__card-container">
             <div class="menu__pivo">
-                <h2 class="title menu__title">Кофе</h2>
+                <h2 class="title menu__title" id="coffee">Кофе</h2>
                 <div class="menu__content-container">
                     <div class="menu__item" v-for="product in coffee" :key="product">
                         <div class="menu__item-container">
@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="menu__vodka">
-                <h2 class="title menu__title">Чай</h2>
+                <h2 class="title menu__title" id="chay">Чай</h2>
                 <div class="menu__content-container">
                     <div class="menu__item" v-for="product in tea" :key="product">
                         <div class="menu__item-container">

@@ -1,7 +1,7 @@
 <template>
     <div class="menu__content" id="first">
         <div class="menu__card-container">
-            <div class="menu__pivo">
+            <div class="menu__pivo" id="pivo">
                 <h2 class="title menu__title">Пиво</h2>
                 <div class="menu__content-container">
                     <div class="menu__item" v-for="product in bear" :key="product">
@@ -24,7 +24,7 @@
             </div>
             <div class="menu__vodka">
                 <h2 class="title menu__title">Водка</h2>
-                <div class="menu__content-container">
+                <div class="menu__content-container" id="vodka">
                     <div class="menu__item" v-for="product in vodka" :key="product">
                         <div class="menu__item-container">
                             <div class="menu__item-left">

@@ -9,6 +9,51 @@
   //   position: a;
   // }
 
+  &__locales {
+    position: relative;
+
+    &-menu {
+      display: flex;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    &-ul {
+      width: 100%;
+    }
+
+    &-list {
+      overflow: hidden;
+      position: absolute;
+      top: 30px;
+      left: -10px;
+      z-index: 999;
+      background: #ffffff1c;
+      width: 100%;
+      backdrop-filter: blur(4px);
+      border-radius: 10px;
+      transition: all 300ms;
+    }
+
+    &-trigger {
+      padding: 10px;
+    }
+
+
+    &-text {
+      color: var(--white, #F5F5F5);
+      text-align: center;
+      cursor: pointer;
+
+      /* 16/Regular */
+      font-family: $mr;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  }
+
   &__mobile {
     width: 100%;
     height: 100vh;
@@ -290,4 +335,20 @@
 .navbar-leave-to {
   opacity: 0;
   transform: translateX(-300px);
+}
+
+
+.locales-enter-active,
+.locales-leave-active {
+  transition: all 0.3s ease;
+}
+
+.locales-leave-to {
+  opacity: 0;
+  animation: stop 0.3s;
+}
+
+.locales-enter-from {
+  animation: show 0.3s;
+  opacity: 0;
 }

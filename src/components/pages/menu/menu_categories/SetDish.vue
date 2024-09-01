@@ -2,7 +2,7 @@
     <div class="menu__content" id="set">
         <div class="menu__card-container">
             <div class="menu__content-container">
-                <h2 class="title menu__title">Европейские блюда</h2>
+                <h2 class="title menu__title">Ассорти и сеты</h2>
             </div>
             <div class="menu__image">
                 <img src="@/assets/images/menu/categories/assorti.png" alt="Dish" class="menu__image-img image-fixed-img">
@@ -19,6 +19,9 @@
                             <ul class="menu__item-time">
                                 <li>
                                     <p class="menu__item-text">{{product.time}}</p>
+                                </li>
+                                <li>
+                                    <p class="menu__item-text">{{product.min_count}}</p>
                                 </li>
                             </ul>
                         </div>

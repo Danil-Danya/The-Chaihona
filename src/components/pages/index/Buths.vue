@@ -3,10 +3,10 @@
         <div class="buths__container">
             <div class="container">
                 <div class="buths__content">
-                    <h2 class="title buths__title">Приватные оазисы</h2>
+                    <h2 class="title buths__title">{{ $t('index.booths.title') }}</h2>
                     <div class="buths__content-container">
                         <div class="buths__left">
-                            <p class="buths__text"><strong>The Choyxona</strong>, расположенная в уединенном уголке центра города, напоминает закрытые беседки загородного дома, где вы можете собраться большой компанией в одной из 13 кабинок нового формата.</p>
+                            <p class="buths__text"><strong>The Choyxona</strong>, {{ $t('index.booths.text') }}</p>
                             <Button :notation="buttonNotation" />
                         </div>
                         <div class="buths__right">

@@ -1,0 +1,170 @@
+{
+    "navbar": {
+        "navList": [
+            { "path": "https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167", "text": "Bron qilish" },
+            { "path": "/menu", "text": "Menyu" },
+            { "path": "/booths", "text": "Kabinalar" },
+            { "path": "/about", "text": "Biz haqimizda" },
+            { "path": "/blog", "text": "Blog" },
+            { "path": "/about#staff", "text": "Oltin qoʻllar" }
+        ],
+        "contactList": [
+            { "path": "https://yandex.uz/maps/org/the_choyxona/193687795731/?ll=69.314788%2C41.332788&z=17", "text": "Toshkent, Bogʻishamol shohkoʻchasi, 131", "icon": "Location" },
+            { "path": "tel:+998998448888", "text": "+998 (99) 844-88-88", "icon": "Phone" }
+        ]
+    },
+    "footer": {
+        "socialList": [
+            {
+                "icon": "facebook", 
+                "path": "https://www.facebook.com/thechoyxona"
+            },
+            {
+                "icon": "instagram", 
+                "path": "https://www.instagram.com/thechoyxona"
+            },
+            {
+                "icon": "telegram", 
+                "path": "https://t.me/thechoyxona"
+            }
+        ],
+        "barList": [
+            { "path": "/menu", "text": "Menyu" },
+            { "path": "/booths", "text": "Kabinalar" },
+            { "path": "/about", "text": "Biz haqimizda" }
+        ],
+        "contactList": [
+            { "icon": "Location", "text": "Toshkent, Bogʻishamol shohkoʻchasi, 131", "path": "https://yandex.uz/maps/org/the_choyxona/193687795731/?ll=69.314788%2C41.332788&z=17" },
+            { "icon": "Phone", "text": "+998 (99) 844-88-88", "path": "tel:+998998448888" },
+            { "icon": "Clock", "text": "Har kuni 08:00 - 23:00" }
+        ]
+    },
+    "buttonNotation": {
+        "text": "Bron qilish",
+        "path": ""
+    },
+    "index": {
+        "about": {
+            "leftText": "bu sharq anʼanalarining va gʻarb tendensiyalarining uygʻunligi hamda milliy va yevropa taomlarining keng assortimenti.",
+            "rightText": "Yangi formatdagi restoran — bu muhit, estetik lazzat, qulaylik va fazo, xizmat va oshxonada ishonch hissini yaratadi. Yangi reallik talablariga javob beruvchi muassasalardan biri bu ",
+            "strongText": "The Choyxona."
+        },
+        "menu": {
+            "title": "Sevimli taomlaringizning yangi ta'mlarini kashf eting",
+            "cards": ["Birinchi taomlar", "Ikkinchi taomlar", "Shashliklar", "Desertlar"]
+        },
+        "booths": {
+            "title": "Shaxsiy oazislar",
+            "strongText": "The Choyxona",
+            "text": ", shahar markazining tanho burchagida joylashgan qishloq uyining yopiq gazeboslarini eslatadi, u erda siz yangi formatdagi 13 ta kabinadan birida katta guruh bilan to'planishingiz mumkin."
+        },
+        "staff": {
+            "title": "Oltin qoʻllar",
+            "textLeft": "Bizning oshpazlarimiz haqiqiy kulinariya sanʼati mohirlaridir, ular oddiy tushlikni ta'm retseptorlaringiz uchun bayramga aylantirishlari mumkin.",
+            "textRight": "Mehru va diqqat bilan ular eng yaxshi ingredientlarni tanlab, ilhomlantiruvchi, xursand qiluvchi va esda qolarli taomlar tayyorlaydilar. Ularning talanti va kulinariyaga boʻlgan ishtiyoqi har bir tafsilotda, har bir hiddan sezilib turadi, sizni yana qayta-qayta bizga qaytishga majbur qiladi.",
+            "text": "Batafsil maʼlumot olish uchun boʻlimiga o‘ting",
+            "link": "Biz haqimizda",
+            "staffList": [
+                { 
+                    "name": "Abdukarim Abduraxmanov",
+                    "post": "Shеf-oshpaz •",
+                    "experience": "5 yillik tajriba",
+                    "slogan": "Oshxona jеdayi"
+                },
+                { 
+                    "name": "Abdukarim Abduraxmanov",
+                    "post": "Yordamchi oshpaz •",
+                    "experience": "5 yillik tajriba",
+                    "slogan": "Plov ustasi",
+                    "class": "staff__slogan-long"
+                }
+            ]
+        },
+        "blog": {
+            "title": "Hodisalar"
+        },
+        "contacts": {
+            "title": "Sizni manzilda kutamiz",
+            "contactsList": [
+                { "icon": "Location", "text": "Toshkent, Bogʻishamol shohkoʻchasi, 131" },
+                { "icon": "Phone", "text": "+998 (99) 844-88-88" },
+                { "icon": "Time", "text": "Har kuni 08:00 - 23:00" }
+            ]
+        }
+    },
+    "menu": {
+        "switcher": {
+            "dish": "Asosiy menyu",
+            "bar": "Bar menyusi"
+        },
+        "sliderBar": {
+            "sliderDataDish": [
+                { "name": "Birinchi taomlar", "hash": "first" },
+                { "name": "Milliy taomlar", "hash": "national" },
+                { "name": "Yevropa taomlari", "hash": "europian" },
+                { "name": "Assortiment va to'plamlar", "hash": "set" },
+                { "name": "Shashliklar", "hash": "shashlyki" },
+                { "name": "Sovuq taomlar", "hash": "holodnye_zakuski" },
+                { "name": "Issiq taomlar", "hash": "goryachie_zakuski" },
+                { "name": "Salatlar", "hash": "salats" },
+                { "name": "Desertlar", "hash": "deserts" }
+            ],
+            "sliderDateDrinks": [
+                { "name": "Pivo", "hash": "pivo" },
+                { "name": "Gin", "hash": "gin" },
+                { "name": "Aroq", "hash": "vodka" },
+                { "name": "Rum", "hash": "rum" },
+                { "name": "Viski", "hash": "viski" },
+                { "name": "Tequila", "hash": "tekilla" },
+                { "name": "Vion", "hash": "vino" },
+                { "name": "Choy", "hash": "chay" },
+                { "name": "Kofe", "hash": "coffee" },
+                { "name": "Koteyllar", "hash": "kokteyli" },
+                { "name": "Suv", "hash": "water" },
+                { "name": "Lomonatlar", "hash": "lemonade" },
+                { "name": "Ichimliklar", "hash": "napitki" }
+            ]
+        },
+        "unit": "sum",
+        "titles": [
+            "Birinchi taomlar",
+            "Milliy taomlar",
+            "Yevropa taomlari",
+            "Assortiment va to'plamlar",
+            "Shashliklar",
+            "Sovuq taomlar",
+            "Issiq taomlar",
+            "Salatlar",
+            "Desertlar",
+            "Pivo",
+            "Aroq",
+            "Viski",
+            "Jin",
+            "Rom",
+            "Konyak",
+            "Tekilla",
+            "Vino",
+            "Kofe",
+            "Choy",
+            "Suv",
+            "Ichimliklar",
+            "Kokteyllar",
+            "Lomonatlar"
+        ]
+    },
+    "booths": {
+        "filters": {
+            "persones": "Odamlar soni:",
+            "opyions": "Variantlar",
+            "title": "Mos keladigan stendlar:"
+        }
+    },
+    "blog": {
+        "title": "Joriy maqolalar",
+        "link": "link",
+        "top": "Eng sara maqolalar",
+        "search": "Maqolani toping",
+        "news": "Yangiliklarni kuzatib boring:",
+        "video": "Maqolaning video versiyasi"
+    }
+}

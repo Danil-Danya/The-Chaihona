@@ -3,10 +3,10 @@
         <div class="staff__container">
             <div class="container">
                 <div class="staff__content">
-                    <h2 class="title staff__title">Золотые руки</h2>
+                    <h2 class="title staff__title">{{ $t('index.staff.title') }}</h2>
                     <div class="staff__text-container">
-                        <p class="staff__text staff__text-short">Наши повара — настоящие маги кулинарного искусства, они способны превратить обычный обед в праздник для ваших вкусовых рецепторов.</p>
-                        <p class="staff__text staff__text-wide">С любовью и тщательностью они выбирают лучшие ингредиенты, создавая блюда, которые вдохновляют, радуют и оставляют незабываемые воспоминания. Их талант и страсть к кулинарии проявляются в каждой детали, в каждом аромате, заставляя вас возвращаться к нам снова и снова.</p>
+                        <p class="staff__text staff__text-short">{{ $t('index.staff.textLeft') }}</p>
+                        <p class="staff__text staff__text-wide">{{ $t('index.staff.textRight') }}</p>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@ export default {
                 post: 'Помощник повара •',
                 experience: 'стаж 5 лет',
                 slogan: 'Главный по плову',
-                class: 'staff__slogan-long',
+                //class: 'staff__slogan-long',
                 img: require('@/assets/images/staff/staff_2.png')
             },
         ],
@@ -88,7 +88,21 @@ export default {
     },
 
     mounted () {
-        this.$nextTick(() => {       
+        this.staffList = this.staffList.map((item, index) => {
+            const newList = this.$i18n.messages[localStorage.getItem('locale')].index.staff.staffList[index];
+            
+            item.name = newList.name;
+            item.post = newList.post;
+            item.experience = newList.experience;
+            item.slogan = newList.slogan;
+
+            return item;
+        })
+
+        console.log(this.staffList);
+        
+
+        this.$nextTick(() => {     
             if (window.innerWidth > 1000) {
                 this.$gsap.fromTo('.staff__text-short', {
                     opacity: 0,
