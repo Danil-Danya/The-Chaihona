@@ -1,6 +1,6 @@
 <template>
     <section class="post-video" v-if="post.videos && post.videos.length > 0">
-        <h2 class="post__default-title">Видео-версия статьи</h2>
+        <h2 class="post__default-title">{{ $t('blog.video') }}</h2>
         <div class="post__video" 
          v-if="post.videos && post.videos.length > 0"
          v-html="post.videos[0].HTML_code"

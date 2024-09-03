@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="blog__card-buttons">
-                <router-link :to="`/post/${card.unical_url_name}`" class="blog__card-link">Подробнее</router-link>
+                <router-link :to="`/post/${card.unical_url_name}`" class="blog__card-link">{{ $t('blog.link') }}</router-link>
             </div>
         </div>
     </div>
@@ -32,6 +32,7 @@ import Views from '@/components/icons/blog/Views.vue';
 export default {
     data: () => ({
         link: import.meta.env.VITE_APP_DEFAULT_IMAGES_LINK,
+        locale: localStorage.getItem('locale')
     }),
 
     components: {
@@ -41,10 +42,24 @@ export default {
     computed: {
         truncatedTitle() {
             const maxLength = 52;
-            if (this.card.title.length > maxLength) {
-                return this.card.title.substring(0, maxLength) + '...';
+            let title;
+
+            switch (this.locale) {
+                case 'eng':
+                    title = this.card.title_eng;
+                    break;
+                case 'uzb':
+                    title = this.card.title_uzb;
+                    break;
+                default:
+                    title = this.card.title;
             }
-            return this.card.title;
+
+            if (title.length > maxLength) {
+                return title.substring(0, maxLength) + '...';
+            }
+
+            return title;
         }
     },
 

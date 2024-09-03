@@ -3,7 +3,7 @@
         <div class="content__container">
             <div class="container">
                 <div class="content__block">
-                    <h2 class="content__alert">Подходящие кабинки:</h2>
+                    <h2 class="content__alert">{{ $t('booths.title') }}</h2>
                     <Card :notation="cardNatation"/>
                 </div>
             </div>
@@ -18,7 +18,8 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
     data: () => ({
-        cardNatation: []
+        cardNatation: [],
+        locale: localStorage.getItem('locale')
     }),
 
     computed: {

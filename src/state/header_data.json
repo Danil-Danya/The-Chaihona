@@ -1,7 +1,11 @@
 {
     "index": {
         "title": "Чайхона нового формата",
+        "titleUz": "Yangi formatdagi chayxona",
+        "titleEng": "Chaykhona of a new format",
         "description": "Слияние восточных традиций и западных трендов, а также широкий ассортимент блюд национальной и европейской кухни",
+        "descriptionUz": "Sharq anʼanalari va gʻarbiy tendensiyalarning uygʻunligi, shuningdek, milliy va Yevropa taomlari keng tanlovi",
+        "descriptionEng": "A fusion of Eastern traditions and Western trends, as well as a wide range of national and European cuisine dishes",
         "buttons": [
             {
                 "path": "/menu",
@@ -13,39 +17,117 @@
                 "bordered": false,
                 "text": "Забронировать"
             }
+        ],
+        "buttonsEng": [
+            {
+                "path": "/menu",
+                "bordered": true,
+                "text": "View Menu"
+            },
+            {
+                "path": "https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167s",
+                "bordered": false,
+                "text": "Book Now"
+            }
+        ],
+        "buttonsUz": [
+            {
+                "path": "/menu",
+                "bordered": true,
+                "text": "Menyuni ko'rish"
+            },
+            {
+                "path": "https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167s",
+                "bordered": false,
+                "text": "Band qilish"
+            }
         ]
     },
     "menu": {
         "title": "Меню Чайхоны",
+        "titleUz": "Chayxona Menyusi",
+        "titleEng": "Chaykhona Menu",
         "description": "Узбекская кухня – это то, что может свести с ума одним видом. Про вкус мы молчим и просто готовим для вас национальные блюда в лучшем исполнении!",
+        "descriptionUz": "Oʻzbek taomlari – bu faqat bir qarashda sizni aqldan ozdirishi mumkin. Ta’m haqida sukut saqlaymiz va siz uchun milliy taomlarni eng yaxshi ijroda tayyorlaymiz!",
+        "descriptionEng": "Uzbek cuisine – something that can drive you crazy with just one look. We won’t even talk about the taste, we just prepare national dishes for you in the best execution!",
         "buttons": [
             {
                 "path": "https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167",
                 "bordered": false,
                 "text": "Забронировать"
+            }
+        ],
+        "buttonsEng": [
+            {
+                "path": "https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167",
+                "bordered": false,
+                "text": "Book Now"
+            }
+        ],
+        "buttonsUz": [
+            {
+                "path": "https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167",
+                "bordered": false,
+                "text": "Band qilish"
             }
         ]
     },
     "booths": {
         "title": "Кабинки Чайхоны",
+        "titleUz": "Chayxona kabinalari",
+        "titleEng": "Chaykhona Booths",
         "description": "Кабинки, рассчитанные на 8-10-12-14-16 человек, оснащены всем необходимым для комфортного времяпровождения в кругу друзей.",
+        "descriptionUz": "8-10-12-14-16 kishilik kabinalar do'stlar davrasida qulay dam olish uchun zarur bo'lgan barcha narsalar bilan jihozlangan.",
+        "descriptionEng": "Booths designed for 8-10-12-14-16 people are equipped with everything necessary for a comfortable time with friends.",
         "buttons": [
             {
                 "path": "https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167",
                 "bordered": false,
                 "text": "Забронировать"
             }
+        ],
+        "buttonsEng": [
+            {
+                "path": "https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167",
+                "bordered": false,
+                "text": "Book Now"
+            }
+        ],
+        "buttonsUz": [
+            {
+                "path": "https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167",
+                "bordered": false,
+                "text": "Band qilish"
+            }
         ]
     },
     "about": {
         "title": "О нас",
+        "titleUz": "Biz haqimizda",
+        "titleEng": "About Us",
         "description": "Слияние восточных традиций и западных трендов, а также широкий ассортимент блюд национальной и европейской кухни",
+        "descriptionUz": "Sharq anʼanalari va gʻarbiy tendensiyalarning uygʻunligi, shuningdek, milliy va Yevropa taomlari keng tanlovi",
+        "descriptionEng": "A fusion of Eastern traditions and Western trends, as well as a wide range of national and European cuisine dishes",
         "background": "about-bg",
         "buttons": [
             {
-                "path": "/about",
+                "path": "https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167",
                 "bordered": false,
                 "text": "Забронировать"
+            }
+        ],
+        "buttonsEng": [
+            {
+                "path": "https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167",
+                "bordered": false,
+                "text": "Book Now"
+            }
+        ],
+        "buttonsUz": [
+            {
+                "path": "https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167",
+                "bordered": false,
+                "text": "Band qilish"
             }
         ]
     }

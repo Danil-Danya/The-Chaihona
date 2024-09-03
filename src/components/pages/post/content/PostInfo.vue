@@ -1,6 +1,8 @@
 <template>
     <section class="post-info">
-        <h1 class="post__info-title">{{post.title}}</h1>
+        <h1 class="post__info-title" v-if="locale === 'rus'">{{post.title}}</h1>
+        <h1 class="post__info-title" v-if="locale === 'eng'">{{post.title_eng}}</h1>
+        <h1 class="post__info-title" v-if="locale === 'uzb'">{{post.title_uzb}}</h1>
         <div class="post__statistic">
             <div class="post__date">
                 <p class="post__statistic-text" v-if="post.createdAt">{{ post.createdAt.split('T')[0] }}</p>
@@ -18,7 +20,9 @@
             </transition>
         </div>
         <div class="post__paragraphs">
-            <p class="post__paragraphs-text" v-for="desc in post.descriptions" :key="desc">{{ desc.description }}</p>
+            <p class="post__paragraphs-text" v-if="locale === 'rus'" v-for="desc in post.descriptions" :key="desc">{{ desc.description }}</p>
+            <p class="post__paragraphs-text" v-if="locale === 'eng'" v-for="desc in post.descriptions" :key="desc">{{ desc.description_eng }}</p>
+            <p class="post__paragraphs-text" v-if="locale === 'uzb'" v-for="desc in post.descriptions" :key="desc">{{ desc.description_uzb }}</p>
         </div>
     </section>
 </template>
@@ -33,6 +37,7 @@ import axios from '@/api/axios';
 export default {
     data: () => ({
         link: import.meta.env.VITE_APP_DEFAULT_IMAGES_LINK,
+        locale: localStorage.getItem('locale'),
         zoom: false
     }),
 

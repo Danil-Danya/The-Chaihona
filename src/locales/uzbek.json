@@ -14,6 +14,7 @@
         ]
     },
     "footer": {
+        "news": "Yangiliklarni kuzatib boring:",
         "socialList": [
             {
                 "icon": "facebook", 
@@ -97,12 +98,15 @@
             "dish": "Asosiy menyu",
             "bar": "Bar menyusi"
         },
+        "min_count": {
+            "text": "Minimal porsiya:"
+        },
         "sliderBar": {
             "sliderDataDish": [
                 { "name": "Birinchi taomlar", "hash": "first" },
                 { "name": "Milliy taomlar", "hash": "national" },
                 { "name": "Yevropa taomlari", "hash": "europian" },
-                { "name": "Assortiment va to'plamlar", "hash": "set" },
+                { "name": "Assortiment va setlar", "hash": "set" },
                 { "name": "Shashliklar", "hash": "shashlyki" },
                 { "name": "Sovuq taomlar", "hash": "holodnye_zakuski" },
                 { "name": "Issiq taomlar", "hash": "goryachie_zakuski" },
@@ -130,7 +134,7 @@
             "Birinchi taomlar",
             "Milliy taomlar",
             "Yevropa taomlari",
-            "Assortiment va to'plamlar",
+            "Assorti va setlar",
             "Shashliklar",
             "Sovuq taomlar",
             "Issiq taomlar",
@@ -154,16 +158,46 @@
     },
     "booths": {
         "filters": {
+            "optionsArr": [
+                {
+                    "name": "PS5",
+                    "value": "PS5"
+                },
+                {
+                    "name": "Netflix",
+                    "value": "Netflix"
+                },
+                {
+                    "name": "Nos",
+                    "value": "Кальян"
+                },
+                {
+                    "name": "AllPlay",
+                    "value": "AllPlay"
+                },
+                {
+                    "name": "ITV",
+                    "value": "ITV"
+                },
+                {
+                    "name": "Stol o'yinlari",
+                    "value": "Настольные игры"
+                }
+            ],
+            "reset": "Qayta tiklash",
             "persones": "Odamlar soni:",
-            "opyions": "Variantlar",
-            "title": "Mos keladigan stendlar:"
-        }
+            "options": "Variantlar"
+        },
+        "title": "Mos keladigan stendlar:"
     },
     "blog": {
         "title": "Joriy maqolalar",
-        "link": "link",
+        "link": "batafsil ma'lumot",
         "top": "Eng sara maqolalar",
         "search": "Maqolani toping",
+        "other": "Boshqa voqealar",
+        "notfound": "Satyas topilmadi",
+        "searched": "Topilgan maqolalar",
         "news": "Yangiliklarni kuzatib boring:",
         "video": "Maqolaning video versiyasi"
     }

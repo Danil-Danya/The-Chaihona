@@ -10,7 +10,7 @@
                             </router-link>
                         </div>
                         <div class="footer__social" v-if="width > 960">
-                            <p class="footer__social-text">Следите за новостями</p>
+                            <p class="footer__social-text">{{ $t('footer.news') }}</p>
                             <ul class="footer__social-container">
                                 <li v-for="social in socialList" :key="social">
                                     <a :href="social.path" class="footer__social-link">
@@ -37,7 +37,7 @@
                         </ul>
                     </div>
                     <div class="footer__action">
-                        <a href="https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167" class="button footer__button">Забронировать</a>
+                        <a href="https://n745883.alteg.io/company/702167/personal/select-master?api_key=zna3an7p3yq13vqfny0k&o=m-1&companyId=702167" class="button footer__button">{{ $t('buttonNotation.text') }}</a>
                     </div>
                     <div class="footer__social footer__social-mobile" v-if="width < 960">
                         <p class="footer__social-text">Следите за новостями</p>
@@ -108,6 +108,13 @@ export default {
         Phone,
         Clock,
         Button
+    },
+
+    mounted () {
+        const locales = this.$i18n.messages[localStorage.getItem('locale')];
+
+        this.barList = locales.footer.barList;
+        this.contactList = locales.footer.contactList;
     }
 }
 

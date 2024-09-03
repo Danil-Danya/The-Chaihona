@@ -84,8 +84,6 @@ export default {
         const params = { region: 'uzb', limit, page };
         await this.fetchPosts(params);
         this.posts = this.getPosts.rows;
-        console.log(this.posts);
-        
     },
 }
 

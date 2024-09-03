@@ -14,6 +14,7 @@
         ]
     },        
     "footer": {
+        "news": "Follow the news:",
         "socialList": [
             {
                 "icon": "facebook", 
@@ -97,6 +98,9 @@
             "dish": "Main Menu",
             "bar": "Bar Menu"
         },
+        "min_count": {
+            "text": "Minimum portion:"
+        },
         "sliderBar": {
             "sliderDataDish": [
                 { "name": "First Courses", "hash": "first" },
@@ -154,17 +158,47 @@
     },
     "booths": {
         "filters": {
-            "persones": "Количество персон:",
-            "opyions": "Опции",
-            "title": "Подходящие кабинки:"
-        }
+            "optionsArr": [
+                {
+                    "name": "PS5",
+                    "value": "PS5"
+                },
+                {
+                    "name": "Netflix",
+                    "value": "Netflix"
+                },
+                {
+                    "name": "Hookah",
+                    "value": "Кальян"
+                },
+                {
+                    "name": "AllPlay",
+                    "value": "AllPlay"
+                },
+                {
+                    "name": "ITV",
+                    "value": "ITV"
+                },
+                {
+                    "name": "Board games",
+                    "value": "Настольные игры"
+                }
+            ],
+            "persones": "Number of persons:",
+            "options": "Options",
+            "reset": "reset"
+        },
+        "title": "Suitable booths:"
     },
     "blog": {
-        "title": "Актуальные статьи",
-        "link": "link",
-        "top": "Топ статьи",
-        "search": "Найти статью",
-        "news": "Следите за новостями:",
-        "video": "Видео-версия статьи"
+        "title": "Relevant articles",
+        "link": "More details",
+        "top": "Top articles",
+        "search": "Find an article",
+        "notfound": "Article not found",
+        "searched": "Found articles",
+        "news": "Follow the news:",
+        "other": "Other events",
+        "video": "Video version of the article"
     }
 }

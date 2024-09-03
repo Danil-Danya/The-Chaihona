@@ -2,16 +2,20 @@
     <div class="menu__content" id="first">
         <div class="menu__card-container">
             <div class="menu__pivo" id="pivo">
-                <h2 class="title menu__title">Пиво</h2>
+                <h2 class="title menu__title">{{$t('menu.titles[9]')}}</h2>
                 <div class="menu__content-container">
                     <div class="menu__item" v-for="product in bear" :key="product">
                         <div class="menu__item-container">
                             <div class="menu__item-left">
-                                <h3 class="menu__item-title">{{product.title}}</h3>
-                                <p class="menu__item-text">{{product.description}}</p>
+                                <h3 class="menu__item-title" v-if="locale === 'rus'">{{product.title}}</h3>
+                                <h3 class="menu__item-title" v-if="locale === 'eng'">{{product.title_eng ? product.title_eng : product.title}}</h3>
+                                <h3 class="menu__item-title" v-if="locale === 'uzb'">{{product.title_uzb ? product.title_uzb : product.title}}</h3>
+                                <p class="menu__item-text" v-if="locale === 'rus'">{{product.description}}</p>
+                                <p class="menu__item-text" v-if="locale === 'eng'">{{product.description_eng}}</p>
+                                <p class="menu__item-text" v-if="locale === 'uzb'">{{product.description_uzb}}</p>
                             </div>
                             <div class="menu__item-right">
-                                <h3 class="menu__item-title">{{product.price}} сум</h3>
+                                <h3 class="menu__item-title">{{product.price}} {{$t('menu.unit')}} </h3>
                                 <ul class="menu__item-time">
                                     <li>
                                         <p class="menu__item-text">{{product.time}}</p>
@@ -23,16 +27,20 @@
                 </div>
             </div>
             <div class="menu__vodka">
-                <h2 class="title menu__title">Водка</h2>
+                <h2 class="title menu__title">{{$t('menu.titles[10]')}}</h2>
                 <div class="menu__content-container" id="vodka">
                     <div class="menu__item" v-for="product in vodka" :key="product">
                         <div class="menu__item-container">
                             <div class="menu__item-left">
-                                <h3 class="menu__item-title">{{product.title}}</h3>
-                                <p class="menu__item-text">{{product.description}}</p>
+                                <h3 class="menu__item-title" v-if="locale === 'rus'">{{product.title}}</h3>
+                                <h3 class="menu__item-title" v-if="locale === 'eng'">{{product.title_eng ? product.title_eng : product.title}}</h3>
+                                <h3 class="menu__item-title" v-if="locale === 'uzb'">{{product.title_uzb ? product.title_uzb : product.title}}</h3>
+                                <p class="menu__item-text" v-if="locale === 'rus'">{{product.description}}</p>
+                                <p class="menu__item-text" v-if="locale === 'eng'">{{product.description_eng}}</p>
+                                <p class="menu__item-text" v-if="locale === 'uzb'">{{product.description_uzb}}</p>
                             </div>
                             <div class="menu__item-right">
-                                <h3 class="menu__item-title">{{product.price}} сум</h3>
+                                <h3 class="menu__item-title">{{product.price}} {{$t('menu.unit')}} </h3>
                                 <ul class="menu__item-time">
                                     <li>
                                         <p class="menu__item-text">{{product.time}}</p>
@@ -52,6 +60,7 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
     data: () => ({
+        locale: localStorage.getItem('locale'),
         products: [],
         bear: [],
         vodka: []

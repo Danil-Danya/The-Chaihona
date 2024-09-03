@@ -2,18 +2,27 @@
     <div class="menu__content" id="national">
         <div class="menu__card-container image-fixed-container">
             <div class="menu__content-container">
-                <h2 class="title menu__title">Национальные блюда</h2>
+                <h2 class="title menu__title">{{$t('menu.titles[1]')}}</h2>
                 <div class="menu__item" v-for="product in products" :key="product">
                     <div class="menu__item-container">
                         <div class="menu__item-left">
-                            <h3 class="menu__item-title">{{product.title}}</h3>
-                            <p class="menu__item-text">{{product.description}}</p>
+                            <h3 class="menu__item-title" v-if="locale === 'rus'">{{product.title}}</h3>
+                            <h3 class="menu__item-title" v-if="locale === 'eng'">{{product.title_eng}}</h3>
+                            <h3 class="menu__item-title" v-if="locale === 'uzb'">{{product.title_uzb}}</h3>
+                            <p class="menu__item-text" v-if="locale === 'rus'">{{product.description}}</p>
+                            <p class="menu__item-text" v-if="locale === 'eng'">{{product.description_eng}}</p>
+                            <p class="menu__item-text" v-if="locale === 'uzb'">{{product.description_uzb}}</p>
                         </div>
                         <div class="menu__item-right">
-                            <h3 class="menu__item-title">{{product.price}} сум</h3>
+                            <h3 class="menu__item-title">{{product.price}} {{$t('menu.unit')}} </h3>
                             <ul class="menu__item-time">
                                 <li>
-                                    <p class="menu__item-text">{{product.time === 'Varies' ? '' : product.time}}</p>
+                                    <p class="menu__item-text" v-if="locale === 'rus'">{{product.time}}</p>
+                                    <p class="menu__item-text" v-if="locale === 'eng'">{{product.time_eng}}</p>
+                                    <p class="menu__item-text" v-if="locale === 'uzb'">{{product.time_uzb}}</p>
+                                </li>
+                                <li v-if="product.min_count">
+                                    <p class="menu__item-text">{{$t('menu.min_count.text')}} {{product.min_count}} </p>
                                 </li>
                             </ul>
                         </div>
@@ -32,7 +41,8 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
     data: () => ({
-        products: []
+        products: [],
+        locale: localStorage.getItem('locale'),
     }),
     computed: {
         ...mapGetters(['getProducts'])

@@ -3,7 +3,7 @@
         <div class="blog__container-slider">
             <div class="container">
                 <div class="blog__content">
-                    <h2 class="title blog__title">Другие события</h2>
+                    <h2 class="title blog__title">{{ $t('blog.other') }}</h2>
                     <SliderPost />
                 </div>
             </div>

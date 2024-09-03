@@ -13,7 +13,7 @@
             <div class="staff__structure">
                 <StaffCard v-for="item in staffList" :employe="item" :key="item"/>
                 <div class="staff__structure-text-container">
-                    <p class="staff__text">Больше информации в разделе <router-link class="staff__link" to="/about"> О нас </router-link></p>
+                    <p class="staff__text">{{ $t('index.staff.text') }}<router-link class="staff__link" to="/about" style="margin-left: 10px;"> {{ $t('index.staff.link') }} </router-link></p>
                 </div>
             </div>
         </div>

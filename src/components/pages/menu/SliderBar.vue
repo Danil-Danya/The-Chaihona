@@ -117,7 +117,12 @@ export default {
     },
 
     mounted () {
-        this.changeSlides()
+        this.changeSlides();
+
+        const locale = this.$i18n.messages[localStorage.getItem('locale')];
+
+        this.sliderDataDish = locale.menu.sliderBar.sliderDataDish;
+        this.sliderDateDrinks = locale.menu.sliderBar.sliderDateDrinks;
     }
 }
 

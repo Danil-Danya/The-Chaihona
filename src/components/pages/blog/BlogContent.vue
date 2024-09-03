@@ -1,7 +1,7 @@
 <template>
     <div class="blog__container">
         <div class="container">
-            <h1 class="title blog__title">Актуальные статьи</h1>
+            <h1 class="title blog__title">{{ $t('blog.title') }}</h1>
             <div class="blog__content-page">
                 <Blog />
                 <PopularBlog />

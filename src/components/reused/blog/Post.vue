@@ -5,7 +5,9 @@
                 <img height="180px" :src="link + notation.image.path" alt="Preview post" class="post__img">
             </router-link>
             <div class="post__text-container">
-                <p class="post__text">{{ truncatedDesc(notation.descriptions[0].description) }}</p>
+                <p class="post__text" v-if="locale === 'rus'">{{ truncatedDesc(notation.descriptions[0].description) }}</p>
+                <p class="post__text" v-if="locale === 'eng'">{{ truncatedDesc(notation.descriptions[0].description_eng) }}</p>
+                <p class="post__text" v-if="locale === 'uzb'">{{ truncatedDesc(notation.descriptions[0].description_uzb) }}</p>
             </div>
         </div>
     </div>
@@ -15,6 +17,7 @@
 
 export default {
     data: () => ({
+        locale: localStorage.getItem('locale'),
         link: import.meta.env.VITE_APP_DEFAULT_IMAGES_LINK,
     }),
     

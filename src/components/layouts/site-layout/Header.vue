@@ -22,6 +22,7 @@ import headerData from '@/state/header_data.json';
 
 export default {
     data: () => ({
+        locale: localStorage.getItem('locale'),
         title: '',
         description: '',
         buttons: [{}],
@@ -31,10 +32,26 @@ export default {
         updateHeader() {
             const page = this.$route.name;
 
-            this.title = headerData[page].title;
-            this.description = headerData[page].description;
-            this.buttons = headerData[page].buttons;
-            this.background = headerData[page].background;
+            if (this.locale === 'rus') {
+                this.title = headerData[page].title;
+                this.description = headerData[page].description;
+                this.buttons = headerData[page].buttons;
+                this.background = headerData[page].background;
+            }
+
+            if (this.locale === 'eng') {
+                this.title = headerData[page].titleEng;
+                this.description = headerData[page].descriptionEng;
+                this.buttons = headerData[page].buttonsEng;
+                this.background = headerData[page].background;
+            }
+
+            if (this.locale === 'uzb') {
+                this.title = headerData[page].titleUz;
+                this.description = headerData[page].descriptionUz;
+                this.buttons = headerData[page].buttonsUz;
+                this.background = headerData[page].background;
+            }
         },
 
         animateHeader () {

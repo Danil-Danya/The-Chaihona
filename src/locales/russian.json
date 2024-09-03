@@ -14,6 +14,7 @@
         ]
     },
     "footer": {
+        "news": "Следите за новостями:",
         "socialList": [
             {
                 "icon": "facebook", 
@@ -98,6 +99,9 @@
             "dish": "Основное меню",
             "bar": "Барное меню"
         },
+        "min_count": {
+            "text": "Минимальная проция:"
+        },
         "sliderBar": {
             "sliderDataDish": [
                 { "name": "Первые блюда", "hash": "first" },
@@ -155,17 +159,48 @@
     },
     "booths": {
         "filters": {
+            "optionsArr": [
+                {
+                    "name": "PS5",
+                    "value": "PS5"
+                },
+                {
+                    "name": "Netflix",
+                    "value": "Netflix"
+                },
+                {
+                    "name": "Кальян",
+                    "value": "Кальян"
+                },
+                {
+                    "name": "AllPlay",
+                    "value": "AllPlay"
+                },
+                {
+                    "name": "ITV",
+                    "value": "ITV"
+                },
+                {
+                    "name": "Настольные игры",
+                    "value": "Настольные игры"
+                }
+            ],
             "persones": "Количество персон:",
-            "opyions": "Опции",
-            "title": "Подходящие кабинки:"
-        }
+            "reset": "Сбросить",
+            "options": "Опции"
+        },
+        "emptyTitle": "Подходящие кабинки: не найденны",
+        "title": "Подходящие кабинки:"
     },
     "blog": {
         "title": "Актуальные статьи",
-        "link": "link",
+        "link": "Подробнее",
         "top": "Топ статьи",
+        "searched": "Найденные статьи",
+        "notfound": "Сатьи не найдены",
         "search": "Найти статью",
         "news": "Следите за новостями:",
+        "other": "Другие события",
         "video": "Видео-версия статьи"
     }
 }

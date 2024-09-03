@@ -1,6 +1,6 @@
 <template>
     <section class="post-recomend">
-        <h2 class="post__recomend-title">Другие наши статьи</h2>
+        <h2 class="post__recomend-title">{{$t('blog.news')}}</h2>
         <div class="post__recomend-container">
             <div class="post__recomend-item" v-for="item in posts" :key="item">
                 <div class="post__recomend-image">
@@ -11,11 +11,13 @@
                 </div>
                 <div class="post__recomend-content">
                     <router-link :to="`/post/${item.unical_url_name}`">
-                        <h3 class="post__recomend-title-blog">{{ truncatedTitle(item.title) }}</h3>
+                        <h3 class="post__recomend-title-blog" v-if="locale === 'rus'">{{ truncatedTitle(item.title) }}</h3>
+                        <h3 class="post__recomend-title-blog" v-if="locale === 'uzb'">{{ truncatedTitle(item.title_uzb) }}</h3>
+                        <h3 class="post__recomend-title-blog" v-if="locale === 'eng'">{{ truncatedTitle(item.title_eng) }}</h3>
                     </router-link>
                     <div class="post__data">
                         <p class="post__recomend-date" v-if="item.createdAt">{{ item.createdAt.split('T')[0] }} г.</p>
-                        <router-link :to="`/post/${item.unical_url_name}`" class="post__recomend-link">Подробнее</router-link>
+                        <router-link :to="`/post/${item.unical_url_name}`" class="post__recomend-link">{{$t('blog.link')}}</router-link>
                     </div>
                 </div>
             </div>
@@ -31,6 +33,7 @@ export default {
     data: () => ({
         posts: [],
         link: import.meta.env.VITE_APP_DEFAULT_IMAGES_LINK,
+        locale: localStorage.getItem('locale')
     }),
 
     computed: {

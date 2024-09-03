@@ -6,11 +6,11 @@
                     <div class="switcher__button-container">
                         <button class="switcher__button" ref="defaultButton" @click="switchMenuTypeFilter('dish')">
                             <HotDishes />
-                            <p class="switcher__text">Основное меню</p>
+                            <p class="switcher__text">{{$t('menu.switcher.dish')}}</p>
                         </button>
                         <button class="switcher__button" ref="drinkButton" @click="switchMenuTypeFilter('drinks')">
                             <IceDrink />
-                            <p class="switcher__text">Барное меню</p>
+                            <p class="switcher__text">{{$t('menu.switcher.bar')}}</p>
                         </button>
                     </div>
                 </div>

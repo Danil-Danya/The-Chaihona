@@ -13,7 +13,7 @@
             </router-link>
             <div class="blog__card-top-info">
                 <p class="blog__card-text">{{ post.createdAt.split('T')[0] }}</p>
-                <router-link :to="`/post/${post.unical_url_name}`" class="blog__card-link">Подробнее</router-link>
+                <router-link :to="`/post/${post.unical_url_name}`" class="blog__card-link">{{ $t('blog.link') }}</router-link>
             </div>
         </div>
     </div>
@@ -25,6 +25,7 @@
 export default {
     data: () => ({
         link: import.meta.env.VITE_APP_DEFAULT_IMAGES_LINK,
+        locale: localStorage.getItem('locale')
     }),
 
     props: {
@@ -35,12 +36,26 @@ export default {
     },
 
     computed: {
-        truncatedTitle() {
+        truncatedTitle () {
             const maxLength = 30;
-            if (this.post.title.length > maxLength) {
-                return this.post.title.substring(0, maxLength) + '...';
+            let title;
+
+            switch (this.locale) {
+                case 'eng':
+                    title = this.post.title_eng;
+                    break;
+                case 'uzb':
+                    title = this.post.title_uzb;
+                    break;
+                default:
+                    title = this.post.title;
             }
-            return this.post.title;
+
+            if (title.length > maxLength) {
+                return title.substring(0, maxLength) + '...';
+            }
+
+            return title;
         }
     },
 }

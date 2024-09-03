@@ -1,17 +1,17 @@
 <template>
     <div class="blog__card-top-container">
         <form class="blog__card-top-form">
-            <input type="text" class="blog__card-top-input" placeholder="Найти статью" v-model="search">
+            <input type="text" class="blog__card-top-input" :placeholder="$t('blog.search')" v-model="search">
         </form>
         <div class="blog__card-top-posts">
-            <h2 class="blog__card-top-title" v-if="search && posts.length === 0">Статьи не найдены</h2>
-            <h2 class="blog__card-top-title" v-else>{{ search ? 'Найденые запросы:' : 'Топ статьи' }}</h2>
+            <h2 class="blog__card-top-title" v-if="search && posts.length === 0">{{ $t('blog.notfound') }}</h2>
+            <h2 class="blog__card-top-title" v-else>{{ search ? $t('blog.searched') : $t('blog.top') }}</h2>
             <div class="blog__card-top-item" v-for="item in posts" :key="item">
                 <BlogTopCard :post="item"/>
             </div>
         </div>
         <div class="blog__card-top-social">
-            <h2 class="blog__card-top-title">Следите за новостями:</h2>
+            <h2 class="blog__card-top-title">{{ $t('blog.news') }}</h2>
             <div class="blog__card-top-icon-container">
                 <a :href="social.path" v-for="social in socialList" :key="social">
                     <component :is="social.icon"></component>

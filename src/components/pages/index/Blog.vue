@@ -3,7 +3,7 @@
         <div class="blog__container">
             <div class="container">
                 <div class="blog__content">
-                    <h2 class="title blog__title">События</h2>
+                    <h2 class="title blog__title">{{ $t('index.blog.title') }}</h2>
                     <SliderPost />
                 </div>
             </div>

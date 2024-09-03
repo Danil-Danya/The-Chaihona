@@ -1,7 +1,7 @@
 <template>
     <section class="contacts">
         <div class="container">
-            <h2 class="title contacts__title">Ждём вас по адресу</h2>
+            <h2 class="title contacts__title">{{ $t('index.contacts.title') }}</h2>
             <div class="contacts__content">
                 <div class="contacts__left">
                     <ul class="contacts__list">
@@ -62,6 +62,10 @@ export default {
         Time,
         Location,
         Phone
+    },
+
+    mounted () {
+        this.contactsList = this.$i18n.messages[localStorage.getItem('locale')].index.contacts.contactsList;
     }
 }
 

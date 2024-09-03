@@ -5,11 +5,11 @@
                 <div class="filter__content">
                     <div class="filter__select-container">
                         <select class="filter__select" v-model="persones" @input="selectPersones">
-                            <option :value="opt" v-for="opt in presonesOpt" :key="opt">Количество персон: {{ opt }}</option>
+                            <option :value="opt" v-for="opt in presonesOpt" :key="opt">{{$t('booths.filters.persones')}} {{ opt }}</option>
                         </select>
                         <select class="filter__select" @input="selectOptions($event)">
-                            <option default>Опции</option>
-                            <option :value="opt" v-for="opt in options" :key="opt">{{ opt }}</option>
+                            <option default>{{$t('booths.filters.options')}}</option>
+                            <option :value="opt.value" v-for="opt in options" :key="opt">{{ opt.name }}</option>
                         </select>
                     </div>
                     <div class="fillter__buttons" v-if="width > 1000">
@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="filter__button-container">
-                    <button class="button fillter__button-default" @click="clearOptions">Сбросить</button>
+                    <button class="button fillter__button-default" @click="clearOptions">{{$t('booths.filters.reset')}}</button>
                 </div>
             </div>
         </div>
@@ -27,8 +27,16 @@
 <script>
 export default {
       data: () => ({
+        locale: localStorage.getItem('locale'),
         persones: 10,
-        options: ['PS5', 'Netflix', 'Кальян', 'AllPlay', 'ITV', 'Настольные игры'],
+        options: [
+            { "name": "PS5", "value": "PS5" },
+            { "name": "Netflix", "value": "Netflix" },
+            { "name": "Кальян", "value": "Кальян" },
+            { "name": "AllPlay", "value": "AllPlay" },
+            { "name": "ITV", "value": "ITV" },
+            { "name": "Настольные игры", "value": "Настольные игры" }
+        ],
         presonesOpt: ['любые', 6, 10, 12, 14, 16, 22],
         selectedOptions: [],
         params: '',
@@ -69,6 +77,20 @@ export default {
         clearOptions () {
             this.selectedOptions = [];
             this.$router.replace({query: {}});
+        }
+    },
+
+    mounted () {
+        this.options = this.$i18n.messages[this.locale].booths.filters.optionsArr;
+
+        if (this.locale === 'rus') {
+            this.presonesOpt[0] = 'любые';
+        }
+        if (this.locale === 'eng') {
+            this.presonesOpt[0] = 'any';
+        }
+        if (this.locale === 'uzb') {
+            this.presonesOpt[0] = 'har qanday';
         }
     }
 }

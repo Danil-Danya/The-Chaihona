@@ -21,6 +21,7 @@ import Info from '@/components/pages/booths/card/Info.vue';
 export default {
     data: () => ({
         buths: [],
+        locale: localStorage.getItem('locale')
     }),
 
     components: {

@@ -3,6 +3,7 @@
 
     &__container {
         background: url("@/assets/images/header/header-bg.webp") no-repeat center /cover;
+        background-attachment: fixed;
         height: 100vh;
         position: relative;
     }
@@ -124,4 +125,5 @@
 
 .about-bg {
     background: url("@/assets/images/header/about-header-bg.webp") no-repeat center /cover;
+    background-attachment: fixed;
 }
