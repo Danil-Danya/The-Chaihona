@@ -87,6 +87,7 @@ export default {
     data: () => ({
         buths: [],
         deleteModal: false,
+        region: localStorage.getItem('region'),
         name: 'Кабинку',
         page: 'buth',
         nameToDelete: 'Кабинка',
@@ -111,12 +112,40 @@ export default {
         }
     },
 
+    watch: {
+        "region": {
+            deep: true,
+            async handler () {
+                const params = {
+                    limit: 20,
+                    region: localStorage.getItem('region'),
+                }
+                await this.fetchBuths(params);
+                this.buths = this.getBuths.rows;
+            }
+        }
+    },
+
     async mounted () {
         const params = {
-            limit: 20
+            limit: 20,
+            region: localStorage.getItem('region')
         }
         await this.fetchBuths(params);
         this.buths = this.getBuths.rows;
+
+        setInterval(async () => {
+            const region = localStorage.getItem('region');
+            if (region !== this.currentRegion) {
+                this.currentRegion = region;
+                const params = {
+                    limit: 20,
+                    region: this.currentRegion,
+                };
+                await this.fetchBuths(params);
+                this.buths = this.getBuths.rows;
+            }
+        }, 10);
     }
 }
 

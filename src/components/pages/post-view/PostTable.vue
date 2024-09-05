@@ -1,7 +1,7 @@
 <template>
     <div class="table">
         <div class="table__container">
-            <h2 class="table__title-h counter">{{ getBuths.count }} {{ getBuths.count > 0 && getBuths.count < 5 ? 'Поста' : 'Постов' }}</h2>
+            <h2 class="table__title-h counter" style="margin-top: 20px;">{{ getPosts.count }} {{ getPosts.count > 0 && getPosts.count < 5 ? 'Поста' : 'Постов' }}</h2>
             <div class="table__header">
                 <div class="table__header-number table__header-top">
                     <p class="table__header-name">#</p>
@@ -26,31 +26,27 @@
                 </div>
             </div>
         </div>
-        <div class="table__content">
+        <div class="table__content" v-for="post in posts" :key="post">
             <div class="table__number table__top">
                 <p class="table__text-bold"></p>
             </div>
             <div class="table__image table__top">
-                <img src="http://185.208.206.75:5000/files/" alt="Preview" class="table__img">
+                <img :src="'http://185.208.206.75:5000/files/' + post.image.path" alt="Preview" class="table__img">
             </div>
             <div class="table__titles table__top">
-                <p class="table__text-bold">Роман Сайфулин об уходе из Makro, открытии The Choyxona ресторане на берегу моря за $1 млн и мечтах о бане</p>
+                <p class="table__text-bold">{{ post.title }}</p>
             </div>
             <div class="table__views table__top">
-                <p class="table__text">3 567</p>
+                <p class="table__text">{{ post.views }}</p>
             </div>
             <div class="table__date table__top">
-                <p class="table__text">August 30, 2023</p>
+                <p class="table__text">{{ post.createdAt.split('T')[0] }}</p>
             </div>
             <div class="table__time table__top">
-                <p class="table__text">19:20</p>
+                <p class="table__text">{{ post.createdAt.split('T')[1].split('.')[0] }}</p>
             </div>
             <div class="table__action table__top">
                 <span class="table__icon">
-                    <router-link to="/post-edite">
-                        <Edite />
-                    </router-link>
-                </span><span class="table__icon">
                     <router-link to="#">
                         <Delete />
                     </router-link>
@@ -70,7 +66,7 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
     data: () => ({
-        buths: []
+        posts: []
     }),
 
     components: {
@@ -89,7 +85,7 @@ export default {
 
     async mounted () {
         await this.fetchPosts();
-        this.buths = this.getPosts.rows;
+        this.posts = this.getPosts.rows;
     }
 }
 
